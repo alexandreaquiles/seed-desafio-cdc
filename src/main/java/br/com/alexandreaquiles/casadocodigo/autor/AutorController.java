@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/admin/autor")
@@ -19,7 +20,7 @@ public class AutorController {
 
     @Transactional
     @PostMapping
-    public ResponseEntity<Autor> novoAutor(@RequestBody Autor autor) {
+    public ResponseEntity<Autor> novoAutor(@RequestBody @Valid Autor autor) {
         entityManager.persist(autor);
         return ResponseEntity.ok().body(autor);
     }
