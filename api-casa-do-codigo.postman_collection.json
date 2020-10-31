@@ -1,0 +1,48 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API da Casa do Código",
+		"_postman_id": "9c7bd2cb-d60e-44b3-c169-cc1e35c41291",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro de um novo autor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+							"",
+							"var dados = JSON.parse(responseBody);",
+							"tests[\"autor tem um nome cadastrado\"] = dados.nome === \"Fernando Boaglio\";",
+							"tests[\"autor tem um email cadastrado\"] = dados.email === \"fernando@boaglio.com\";",
+							"tests[\"autor tem uma descrição cadastrada\"] = dados.descricao.match(/Fernando .+ UNESP .+ Sun Microsystems .+ Oracle Education.+ KDE, Jenkins/)",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/api/admin/autor",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
