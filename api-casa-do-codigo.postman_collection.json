@@ -3,354 +3,421 @@
 	"info": {
 		"name": "API da Casa do Código",
 		"_postman_id": "9c7bd2cb-d60e-44b3-c169-cc1e35c41291",
-		"description": "",
+		"description": "Cadastro de um novo autor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Cadastro de um novo autor",
-			"event": [
+			"name": "autor",
+			"description": "",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 200 retornado\"] = responseCode.code === 200;",
-							"",
-							"var dados = JSON.parse(responseBody);",
-							"tests[\"autor tem um nome cadastrado\"] = dados.nome === \"Fernando Boaglio\";",
-							"tests[\"autor tem um email cadastrado\"] = dados.email === \"fernando@boaglio.com\";",
-							"tests[\"autor tem uma descrição cadastrada\"] = dados.descricao.match(/Fernando .+ UNESP .+ Sun Microsystems .+ Oracle Education.+ KDE, Jenkins/)",
-							"tests[\"autor tem o instante em que foi registrado\"] = dados.criadoEm;"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Cadastro de um novo autor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"autor tem um nome cadastrado\"] = dados.nome === \"Fernando Boaglio\";",
+									"tests[\"autor tem um email cadastrado\"] = dados.email === \"fernando@boaglio.com\";",
+									"tests[\"autor tem uma descrição cadastrada\"] = dados.descricao.match(/Fernando .+ UNESP .+ Sun Microsystems .+ Oracle Education.+ KDE, Jenkins/)",
+									"tests[\"autor tem o instante em que foi registrado\"] = dados.criadoEm;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: descrição deve ser informada",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
-							"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: nome deve ser informado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: descrição não pode ser vazia",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
-							"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: nome não pode ser vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: descrição não pode passar do máximo de caracteres",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
-							"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"tamanho deve ser entre 0 e 400\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: email deve ser informado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: nome deve ser informado",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
-							"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: email não pode ser vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: nome não pode ser vazio",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
-							"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: email deve ser válido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"deve ser um endereço de e-mail bem formado\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernandoboaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: email deve ser informado",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
-							"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: descrição deve ser informada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
+									"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: email não pode ser vazio",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
-							"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: descrição não pode ser vazia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
+									"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: email deve ser válido",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
-							"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"deve ser um endereço de e-mail bem formado\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: descrição não pode passar do máximo de caracteres",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
+									"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"tamanho deve ser entre 0 e 400\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernandoboaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastro de um novo autor: múltiplos campos vazios",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
-							"",
-							"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
-							"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
-							"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
-							"tests[\"contém mensagem de erro\"] = responseBody.has(\"não deve estar em branco\");"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/api/admin/autor",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+					"name": "Autor: múltiplos campos vazios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
+									"tests[\"contém mensagem de erro\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
+				{
+					"name": "Autor: email é único",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email deve ser único: email@quejaexiste.com\");",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/autores",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Alberto Souza\",\n\t\"email\": \"email@quejaexiste.com\",\n\t\"descricao\": \"Alberto, o Dev Eficiente, criador do Cognitive-Driven Development (CDD).\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
