@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Autor {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
