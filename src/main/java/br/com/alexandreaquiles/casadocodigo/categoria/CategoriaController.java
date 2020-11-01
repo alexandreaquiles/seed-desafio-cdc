@@ -1,5 +1,6 @@
 package br.com.alexandreaquiles.casadocodigo.categoria;
 
+import br.com.alexandreaquiles.casadocodigo.autor.Autor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindException;
@@ -24,6 +25,15 @@ public class CategoriaController {
     @PostMapping
     public ResponseEntity<Categoria> novaCategoria(@RequestBody @Valid Categoria categoria, BindingResult bindingResult) throws BindException {
         if (bindingResult.hasErrors()) {
+            throw new BindException(bindingResult);
+        }
+
+        Boolean jaTemNomeCadastrado = entityManager
+                .createQuery("select count(c.id) > 0 from " + Categoria.class.getSimpleName() + " c where c.nome = :nome", Boolean.class)
+                .setParameter("nome", categoria.getNome())
+                .getSingleResult();
+        if (jaTemNomeCadastrado) {
+            bindingResult.rejectValue("nome", "categoria.nome.unico", new String[]{ categoria.getNome() }, "");
             throw new BindException(bindingResult);
         }
 

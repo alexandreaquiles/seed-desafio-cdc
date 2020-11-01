@@ -393,7 +393,7 @@
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
-									"tests[\"contém erro de email\"] = responseBody.has(\"email deve ser único: email@quejaexiste.com\");",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email do autor deve ser único: email@quejaexiste.com\");",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
 								]
 							}
@@ -466,10 +466,12 @@
 							"script": {
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
-									"var dados = JSON.parse(responseBody);",
-									"tests[\"categoria tem um nome cadastrado\"] = dados.nome === \"Data Science\";",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								]
 							}
@@ -525,6 +527,41 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Categoria: nome é único",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome da categoria deve ser único: Categoria que já existe\");",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/categorias",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Categoria que já existe\"\n}\n"
 						},
 						"description": ""
 					},
