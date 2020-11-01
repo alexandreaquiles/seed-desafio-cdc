@@ -315,6 +315,42 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "Cadastro de um novo autor: múltiplos campos vazios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+							"",
+							"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+							"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+							"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
+							"tests[\"contém mensagem de erro\"] = responseBody.has(\"não deve estar em branco\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/api/admin/autor",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
