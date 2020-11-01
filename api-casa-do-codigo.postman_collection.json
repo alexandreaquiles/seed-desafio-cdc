@@ -418,6 +418,47 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "categoria",
+			"description": "Cadastro de uma categoria",
+			"item": [
+				{
+					"name": "Cadastro de uma categoria",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"categoria tem um nome cadastrado\"] = dados.nome === \"Data Science\";",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:8080/api/admin/categorias",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Data Science\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
