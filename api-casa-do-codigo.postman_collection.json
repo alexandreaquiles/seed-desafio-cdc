@@ -1,15 +1,13 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "56e6579f-929d-4585-94e5-f8d76755f3c8",
 		"name": "API da Casa do Código",
-		"_postman_id": "9c7bd2cb-d60e-44b3-c169-cc1e35c41291",
 		"description": "Cadastro de um novo autor",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "autor",
-			"description": "",
 			"item": [
 				{
 					"name": "Cadastro de um novo autor",
@@ -26,25 +24,36 @@
 									"tests[\"autor tem um email cadastrado\"] = dados.email === \"fernando@boaglio.com\";",
 									"tests[\"autor tem uma descrição cadastrada\"] = dados.descricao.match(/Fernando .+ UNESP .+ Sun Microsystems .+ Oracle Education.+ KDE, Jenkins/)",
 									"tests[\"autor tem o instante em que foi registrado\"] = dados.criadoEm;"
-								]
+								],
+								"id": "063ff9b6-b537-4cc8-8b19-64f6dc338fa0"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -54,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "50c25462-d5aa-4c47-828e-e7eabce8cea3",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -63,25 +72,42 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"value": "pt-BR",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -100,25 +126,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "7f84d36d-1f0b-42dd-8ede-575cde1cd526"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -137,25 +174,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "4ad272f8-189c-43d1-977a-a705ad85e824"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -174,25 +222,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "185c0fa8-ad9b-4201-88ee-899cb3761e36"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -211,25 +270,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "c2e528d5-92e5-4260-9c62-3e7e4a372c6e"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernandoboaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -248,25 +318,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "e0d323de-dfa0-4fd7-b1dc-38a92f8ff6aa"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -285,25 +366,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "9bf50719-10b5-4575-a589-b2f0cd128f65"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -322,25 +414,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "99d3b084-8ba7-4c3f-9f0f-e78efeab60ff"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -361,25 +464,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "648aa63a-3fef-4dc1-933e-4a487806ee1b"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -395,33 +509,44 @@
 									"",
 									"tests[\"contém erro de email\"] = responseBody.has(\"email do autor deve ser único: email@quejaexiste.com\");",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
-								]
+								],
+								"id": "ed544a44-f4c4-42aa-8836-951314434e3d"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/autores",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Alberto Souza\",\n\t\"email\": \"email@quejaexiste.com\",\n\t\"descricao\": \"Alberto, o Dev Eficiente, criador do Cognitive-Driven Development (CDD).\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"autores"
+							]
+						}
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "categoria",
-			"description": "Cadastro de uma categoria",
 			"item": [
 				{
 					"name": "Cadastro de uma categoria",
@@ -436,25 +561,36 @@
 									"var dados = JSON.parse(responseBody);",
 									"tests[\"categoria tem um nome cadastrado\"] = dados.nome === \"Data Science\";",
 									""
-								]
+								],
+								"id": "8fe23a90-a157-41de-a57f-865c996c5cae"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/categorias",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Data Science\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"categorias"
+							]
+						}
 					},
 					"response": []
 				},
@@ -473,25 +609,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "9fec115e-ce71-4b48-934c-f72abbfaed3d"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/categorias",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n}\n"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"categorias"
+							]
+						}
 					},
 					"response": []
 				},
@@ -510,25 +657,36 @@
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "d7914d9e-f5c8-4988-a729-d6ebb2bf92d5"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/categorias",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"\"\n}\n"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"categorias"
+							]
+						}
 					},
 					"response": []
 				},
@@ -545,29 +703,67 @@
 									"tests[\"contém erro de nome\"] = responseBody.has(\"nome da categoria deve ser único: Categoria que já existe\");",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
-								]
+								],
+								"id": "647e69fe-2e84-46ba-8922-ab96e9557659"
 							}
 						}
 					],
 					"request": {
-						"url": "http://localhost:8080/api/admin/categorias",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"nome\": \"Categoria que já existe\"\n}\n"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://localhost:8080/api/admin/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"categorias"
+							]
+						}
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Cadastro de uma categoria",
+			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b4307416-e403-46c0-b151-ed067b52299d",
+				"type": "text/javascript",
+				"exec": [
+					"var Header = require('postman-collection').Header;",
+					"pm.request.headers.append(Header.create('pt-BR', 'Accept-Language'));",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c9b7553c-b480-4118-998f-f72d2dc733d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
 }
