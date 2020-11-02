@@ -1,5 +1,30 @@
-# Faça um fork desse repositório
+# Casa do Código
 
-Este é um repositório vazio de propósito. A ideia é que você faça um fork para que eu, Alberto, possa usar o github para ter a chance de olhar vários dos códigos produzido por você e seus(as) colegas da Jornada Dev Eficiente :). 
+## Como rodar os testes?
 
-Durante cada uma das seis semanas eu vou pegar código por amostragem e analisar. Feito isso, vou criar um vídeo anonimizando a pessoa que é dona do código, com as minhas observações e postar isso como material de suporte da funcionalidade :). 
+### Pré-requisitos:
+
+- [Java 11+](https://sdkman.io/jdks)
+- [Maven 3+](https://sdkman.io/sdks#maven)
+- [MySQL 8+](https://dev.mysql.com/downloads/)
+- [Postman](https://www.postman.com/)
+
+### Executando a API da Casa do Código
+
+Num Terminal, execute:
+
+```sh
+mvn spring-boot:run
+```
+
+É usado o usuário `root` sem senha.
+
+Para definir outro usuário ou senha, utilize as variáveis de ambiente `SPRING_DATASOURCE_USERNAME` e `SPRING_DATASOURCE_PASSWORD`, respectivamente.
+
+Deve ser criado um database `casadocodigo` no MySQL, já com as tabelas necessárias.
+
+### Executando os testes no Postman
+
+No Postman, importe o arquivo `api-casa-do-codigo.postman_collection.json`.
+
+Na _collections_ "API da Casa do Código", clique em _Run_ e então em _Run API da Casa do Código_.
