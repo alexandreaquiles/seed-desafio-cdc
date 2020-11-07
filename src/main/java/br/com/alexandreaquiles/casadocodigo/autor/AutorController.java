@@ -2,7 +2,6 @@ package br.com.alexandreaquiles.casadocodigo.autor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,9 +23,6 @@ public class AutorController {
     @Transactional
     @PostMapping
     public ResponseEntity<Autor> novoAutor(@RequestBody @Valid Autor autor, BindingResult bindingResult) throws BindException {
-        Assert.isNull(autor.getId(), "Um novo autor não deveria id.");
-        Assert.isNull(autor.getCriadoEm(), "Um novo autor não deveria ter a data de criação.");
-
         if (bindingResult.hasErrors()) {
             throw new BindException(bindingResult);
         }
