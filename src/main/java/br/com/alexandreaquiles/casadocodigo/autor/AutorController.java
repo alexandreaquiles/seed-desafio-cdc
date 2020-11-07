@@ -27,7 +27,7 @@ public class AutorController {
             throw new BindException(bindingResult);
         }
 
-        Boolean jaTemEmailCadastrado = entityManager
+        boolean jaTemEmailCadastrado = entityManager
                 .createQuery("select count(a.id) > 0 from " + Autor.class.getSimpleName() + " a where a.email = :email", Boolean.class)
                 .setParameter("email", novoAutorRequest.getEmail())
                 .getSingleResult();

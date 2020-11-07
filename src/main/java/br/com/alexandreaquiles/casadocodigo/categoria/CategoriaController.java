@@ -27,7 +27,7 @@ public class CategoriaController {
             throw new BindException(bindingResult);
         }
 
-        Boolean jaTemNomeCadastrado = entityManager
+        boolean jaTemNomeCadastrado = entityManager
                 .createQuery("select count(c.id) > 0 from " + Categoria.class.getSimpleName() + " c where c.nome = :nome", Boolean.class)
                 .setParameter("nome", novaCategoriaRequest.getNome())
                 .getSingleResult();
