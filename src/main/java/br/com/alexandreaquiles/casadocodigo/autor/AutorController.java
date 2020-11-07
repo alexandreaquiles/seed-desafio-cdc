@@ -7,22 +7,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/admin/autores")
 public class AutorController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final AutorRepository autorRepository;
+
+    public AutorController(AutorRepository autorRepository) {
+        this.autorRepository = autorRepository;
+    }
 
     @Transactional
     @PostMapping
     public ResponseEntity<Autor> novoAutor(@RequestBody @Valid NovoAutorRequest novoAutorRequest) {
         Autor autor = novoAutorRequest.toEntity();
-        entityManager.persist(autor);
+        autorRepository.save(autor);
         return ResponseEntity.ok(autor);
     }
 

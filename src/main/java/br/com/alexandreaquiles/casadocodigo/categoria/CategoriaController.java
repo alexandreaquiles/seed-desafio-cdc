@@ -7,22 +7,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/admin/categorias")
 public class CategoriaController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final CategoriaRepository categoriaRepository;
+
+    public CategoriaController(CategoriaRepository categoriaRepository) {
+        this.categoriaRepository = categoriaRepository;
+    }
 
     @Transactional
     @PostMapping
     public ResponseEntity<Categoria> novaCategoria(@RequestBody @Valid NovaCategoriaRequest novaCategoriaRequest) {
         Categoria categoria = novaCategoriaRequest.toEntity();
-        entityManager.persist(categoria);
+        categoriaRepository.save(categoria);
         return ResponseEntity.ok(categoria);
     }
 
