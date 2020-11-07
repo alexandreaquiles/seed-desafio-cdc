@@ -533,14 +533,35 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "ed544a44-f4c4-42aa-8836-951314434e3d",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
 									"tests[\"contém erro de email\"] = responseBody.has(\"email do autor deve ser único: email@quejaexiste.com\");",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
 								],
-								"id": "ed544a44-f4c4-42aa-8836-951314434e3d"
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1657e609-2161-4568-9ac6-844a84009165",
+								"exec": [
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/autores',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"Alexandre\", email: \"email@quejaexiste.com\", descricao: \"um outro autor\" })",
+									"    }",
+									"}, function (err, res) {",
+									"    pm.expect(res.code).to.eq(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -738,7 +759,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "647e69fe-2e84-46ba-8922-ab96e9557659",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -746,7 +767,28 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "647e69fe-2e84-46ba-8922-ab96e9557659"
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81b0881d-c007-4f5b-8177-53b45d4b356a",
+								"exec": [
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/categorias',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"Categoria que já existe\" })",
+									"    }",
+									"}, function (err, res) {",
+									"    pm.expect(res.code).to.eq(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
