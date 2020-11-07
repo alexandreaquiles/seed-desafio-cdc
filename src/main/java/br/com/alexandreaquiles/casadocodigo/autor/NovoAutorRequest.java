@@ -1,5 +1,6 @@
 package br.com.alexandreaquiles.casadocodigo.autor;
 
+import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Email;
@@ -12,6 +13,7 @@ public class NovoAutorRequest {
     @JsonProperty
     private String nome;
 
+    @Unique(entity = Autor.class, field = "email", message = "{autor.email.unico}")
     @NotBlank @Email
     @JsonProperty
     private String email;
