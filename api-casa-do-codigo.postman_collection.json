@@ -39,7 +39,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -93,7 +96,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+							"raw": "{\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -141,7 +147,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+							"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -189,7 +198,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -237,7 +249,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -285,7 +300,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernandoboaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernandoboaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -333,7 +351,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -381,7 +402,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -429,7 +453,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}"
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -479,7 +506,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\n}"
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -524,7 +554,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Alberto Souza\",\n\t\"email\": \"email@quejaexiste.com\",\n\t\"descricao\": \"Alberto, o Dev Eficiente, criador do Cognitive-Driven Development (CDD).\"\n}"
+							"raw": "{\n\t\"nome\": \"Alberto Souza\",\n\t\"email\": \"email@quejaexiste.com\",\n\t\"descricao\": \"Alberto, o Dev Eficiente, criador do Cognitive-Driven Development (CDD).\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/autores",
@@ -576,7 +609,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Data Science\"\n}"
+							"raw": "{\n\t\"nome\": \"Data Science\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/categorias",
@@ -624,7 +660,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n}\n"
+							"raw": "{\n}\n",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/categorias",
@@ -672,7 +711,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"\"\n}\n"
+							"raw": "{\n\t\"nome\": \"\"\n}\n",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/categorias",
@@ -718,7 +760,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Categoria que já existe\"\n}\n"
+							"raw": "{\n\t\"nome\": \"Categoria que já existe\"\n}\n",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/admin/categorias",
