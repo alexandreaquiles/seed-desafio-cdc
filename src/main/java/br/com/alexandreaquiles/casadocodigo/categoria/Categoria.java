@@ -13,6 +13,12 @@ public class Categoria {
     @Column(unique = true)
     private String nome;
 
+    /**
+     * @deprecated apenas para os amigos Hibernate + Spring Data JPA
+     */
+    @Deprecated(since = "uso do findById do Spring Data JPA")
+    protected Categoria() {}
+
     public Categoria(String nome) {
         this.nome = nome;
     }

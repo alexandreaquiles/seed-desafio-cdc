@@ -2,7 +2,6 @@
 	"info": {
 		"_postman_id": "56e6579f-929d-4585-94e5-f8d76755f3c8",
 		"name": "API da Casa do Código",
-		"description": "Cadastro de um novo autor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -15,17 +14,18 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "063ff9b6-b537-4cc8-8b19-64f6dc338fa0",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
 									"var dados = JSON.parse(responseBody);",
+									"tests[\"autor tem um id cadastrado\"] = dados.id > 0;",
 									"tests[\"autor tem um nome cadastrado\"] = dados.nome === \"Fernando Boaglio\";",
 									"tests[\"autor tem um email cadastrado\"] = dados.email === \"fernando@boaglio.com\";",
-									"tests[\"autor tem uma descrição cadastrada\"] = dados.descricao.match(/Fernando .+ UNESP .+ Sun Microsystems .+ Oracle Education.+ KDE, Jenkins/)",
+									"tests[\"autor tem uma descrição cadastrada\"] = dados.descricao && dados.descricao.match(/Fernando .+ UNESP .+ Sun Microsystems .+ Oracle Education.+ KDE, Jenkins/)",
 									"tests[\"autor tem o instante em que foi registrado\"] = dados.criadoEm;"
 								],
-								"id": "063ff9b6-b537-4cc8-8b19-64f6dc338fa0"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -608,15 +608,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "8fe23a90-a157-41de-a57f-865c996c5cae",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
 									"var dados = JSON.parse(responseBody);",
+									"tests[\"categoria tem um id cadastrado\"] = dados.id > 0;",
 									"tests[\"categoria tem um nome cadastrado\"] = dados.nome === \"Data Science\";",
 									""
 								],
-								"id": "8fe23a90-a157-41de-a57f-865c996c5cae"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -825,6 +826,102 @@
 				}
 			],
 			"description": "Cadastro de uma categoria",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "livro",
+			"item": [
+				{
+					"name": "Cadastro de um novo livro",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "251c146c-0bfe-407c-9930-eb3a3fed4307",
+								"exec": [
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/categorias',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"Programação\"})",
+									"    }",
+									"}, function (err, res) {",
+									"        pm.expect(res.code).to.eq(200);",
+									"        pm.globals.set(\"id_categoria_programacao\", res.json().id);",
+									"});",
+									"",
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/autores',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"Felipe Cruz\", email: \"felipe@cruz.com\", descricao: \"Felipe Cruz é desenvolvedor de software há 10 anos. Trabalhou no mercado corporativo e de startups e recentemente atua como Cientista de Dados, área onde reencontrou sua paixão pela construção de software.\" })",
+									"    }",
+									"}, function (err, res) {",
+									"        pm.expect(res.code).to.eq(200);",
+									"        pm.globals.set(\"id_autor_felipe_cruz\", res.json().id);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "afc14467-70c3-4a1b-a43a-9d2f24cdcaec",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"livro tem um id cadastrado\"] = dados.id > 0;",
+									"tests[\"livro tem um título cadastrado\"] = dados.titulo === \"Python: Escreva seus primeiros programas\";",
+									"tests[\"livro tem um resumo cadastrado\"] = dados.resumo &&  dados.resumo.match(/Python é a principal linguagem de programação/);",
+									"tests[\"livro tem um sumário cadastrado\"] = dados.sumarioEmMarkdown && dados.sumarioEmMarkdown.match(/### Parte 1: Seus primeiros passos com o Python/)",
+									"tests[\"livro tem um preço cadastrado\"] = dados.precoEmCentavosDeReais === 2990;",
+									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
+									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"978-85-5519-091-9\";",
+									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2021-03-18\";",
+									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
+									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2021-03-18\",\n    \"categoriaId\": {{id_categoria_programacao}} ,\n    \"autorId\": {{id_autor_felipe_cruz}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"protocolProfileBehavior": {}
 		}
 	],

@@ -27,6 +27,12 @@ public class Autor {
     @NotNull
     private LocalDateTime criadoEm = LocalDateTime.now();
 
+    /**
+     * @deprecated apenas para os amigos Hibernate + Spring Data JPA
+     */
+    @Deprecated(since = "uso do findById do Spring Data JPA")
+    protected Autor() {}
+
     public Autor(String nome, String email, String descricao) {
         this.nome = nome;
         this.email = email;
