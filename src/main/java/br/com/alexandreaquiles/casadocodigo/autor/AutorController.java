@@ -22,20 +22,21 @@ public class AutorController {
 
     @Transactional
     @PostMapping
-    public ResponseEntity<Autor> novoAutor(@RequestBody @Valid Autor autor, BindingResult bindingResult) throws BindException {
+    public ResponseEntity<Autor> novoAutor(@RequestBody @Valid NovoAutorRequest novoAutorRequest, BindingResult bindingResult) throws BindException {
         if (bindingResult.hasErrors()) {
             throw new BindException(bindingResult);
         }
 
         Boolean jaTemEmailCadastrado = entityManager
                 .createQuery("select count(a.id) > 0 from " + Autor.class.getSimpleName() + " a where a.email = :email", Boolean.class)
-                .setParameter("email", autor.getEmail())
+                .setParameter("email", novoAutorRequest.getEmail())
                 .getSingleResult();
         if (jaTemEmailCadastrado) {
-            bindingResult.rejectValue("email", "autor.email.unico", new String[]{ autor.getEmail() }, "");
+            bindingResult.rejectValue("email", "autor.email.unico", new String[]{ novoAutorRequest.getEmail() }, "");
             throw new BindException(bindingResult);
         }
 
+        Autor autor = novoAutorRequest.toEntity();
         entityManager.persist(autor);
         return ResponseEntity.ok(autor);
     }
