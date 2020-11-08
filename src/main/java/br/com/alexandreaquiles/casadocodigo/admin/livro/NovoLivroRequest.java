@@ -5,7 +5,6 @@ import br.com.alexandreaquiles.casadocodigo.admin.categoria.Categoria;
 import br.com.alexandreaquiles.casadocodigo.infra.validation.InvalidRelationshipWithEntityException;
 import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -13,7 +12,6 @@ import java.util.Optional;
 import java.util.function.LongFunction;
 
 import static br.com.alexandreaquiles.casadocodigo.admin.livro.Livro.Builder.umLivro;
-import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
 public class NovoLivroRequest {
 
@@ -43,7 +41,6 @@ public class NovoLivroRequest {
     private String isbn;
 
     @Future
-    @DateTimeFormat(iso = DATE)
     @JsonProperty
     private LocalDate dataDePublicacao;
 
