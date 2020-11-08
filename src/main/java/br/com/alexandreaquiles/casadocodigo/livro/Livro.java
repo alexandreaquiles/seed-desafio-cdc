@@ -2,11 +2,13 @@ package br.com.alexandreaquiles.casadocodigo.livro;
 
 import br.com.alexandreaquiles.casadocodigo.autor.Autor;
 import br.com.alexandreaquiles.casadocodigo.categoria.Categoria;
+import org.springframework.util.Assert;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
+import static java.time.format.DateTimeFormatter.ISO_DATE;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -91,16 +93,18 @@ public class Livro {
         return isbn;
     }
 
-    public LocalDate getDataDePublicacao() {
-        return dataDePublicacao;
+    public String getDataDePublicacaoFormatada() {
+        return dataDePublicacao.format(ISO_DATE);
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public Long getCategoriaId() {
+        Assert.notNull(categoria, "A categoria do livro não deveria ser nula.");
+        return categoria.getId();
     }
 
-    public Autor getAutor() {
-        return autor;
+    public Long getAutorId() {
+        Assert.notNull(autor, "O autor do livro não deveria ser nula.");
+        return autor.getId();
     }
 
     static class Builder {

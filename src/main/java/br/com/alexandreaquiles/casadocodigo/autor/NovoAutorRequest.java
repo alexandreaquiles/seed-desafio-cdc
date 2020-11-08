@@ -26,8 +26,5 @@ public class NovoAutorRequest {
         return new Autor(nome, email, descricao);
     }
 
-    public String getEmail() {
-        return email;
-    }
 }
 

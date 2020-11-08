@@ -27,10 +27,10 @@ public class LivroController {
 
     @Transactional
     @PostMapping
-    public ResponseEntity<Livro> novoLivro(@RequestBody @Valid NovoLivroRequest novoLivroRequest) {
+    public ResponseEntity<NovoLivroResponse> novoLivro(@RequestBody @Valid NovoLivroRequest novoLivroRequest) {
         Livro livro = novoLivroRequest.toEntity(categoriaRepository::findById,
                                                 autorRepository::findById);
         livroRepository.save(livro);
-        return ResponseEntity.ok(livro);
+        return ResponseEntity.ok(new NovoLivroResponse(livro));
     }
 }

@@ -21,10 +21,10 @@ public class CategoriaController {
 
     @Transactional
     @PostMapping
-    public ResponseEntity<Categoria> novaCategoria(@RequestBody @Valid NovaCategoriaRequest novaCategoriaRequest) {
+    public ResponseEntity<NovaCategoriaResponse> novaCategoria(@RequestBody @Valid NovaCategoriaRequest novaCategoriaRequest) {
         Categoria categoria = novaCategoriaRequest.toEntity();
         categoriaRepository.save(categoria);
-        return ResponseEntity.ok(categoria);
+        return ResponseEntity.ok(new NovaCategoriaResponse(categoria));
     }
 
 }

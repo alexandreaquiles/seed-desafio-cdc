@@ -13,7 +13,6 @@ import java.util.Optional;
 import java.util.function.LongFunction;
 
 import static br.com.alexandreaquiles.casadocodigo.livro.Livro.Builder.umLivro;
-import static java.lang.String.format;
 import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
 public class NovoLivroRequest {

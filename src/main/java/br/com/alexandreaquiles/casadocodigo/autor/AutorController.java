@@ -21,10 +21,10 @@ public class AutorController {
 
     @Transactional
     @PostMapping
-    public ResponseEntity<Autor> novoAutor(@RequestBody @Valid NovoAutorRequest novoAutorRequest) {
+    public ResponseEntity<NovoAutorResponse> novoAutor(@RequestBody @Valid NovoAutorRequest novoAutorRequest) {
         Autor autor = novoAutorRequest.toEntity();
         autorRepository.save(autor);
-        return ResponseEntity.ok(autor);
+        return ResponseEntity.ok(new NovoAutorResponse(autor));
     }
 
 }

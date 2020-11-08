@@ -914,8 +914,8 @@
 									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
 									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"978-85-5519-091-9\";",
 									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2099-03-18\";",
-									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
-									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
+									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoriaId > 0;",
+									"tests[\"livro tem um autor cadastrado\"] = dados.autorId > 0;",
 									""
 								],
 								"type": "text/javascript"
@@ -979,8 +979,8 @@
 									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
 									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"000-85-5519-091-9\";",
 									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2099-03-18\";",
-									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
-									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
+									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoriaId > 0;",
+									"tests[\"livro tem um autor cadastrado\"] = dados.autorId > 0;",
 									""
 								],
 								"type": "text/javascript"
@@ -1044,8 +1044,8 @@
 									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
 									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"001-85-5519-091-9\";",
 									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2099-03-18\";",
-									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
-									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
+									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoriaId > 0;",
+									"tests[\"livro tem um autor cadastrado\"] = dados.autorId > 0;",
 									""
 								],
 								"type": "text/javascript"

@@ -12,10 +12,6 @@ public class NovaCategoriaRequest {
     @JsonProperty
     private String nome;
 
-    public String getNome() {
-        return nome;
-    }
-
     public Categoria toEntity() {
         return new Categoria(nome);
     }
