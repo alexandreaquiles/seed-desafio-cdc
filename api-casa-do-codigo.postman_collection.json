@@ -2348,6 +2348,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Listagem de livros",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb580677-2c1a-4499-8777-c1f28720af0c",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"tem uma lista de livros\"] = dados.livros && dados.livros.length > 0;",
+									"dados.livros.forEach((livro, i) => {",
+									"    tests[`livro ${i} tem id`] = livro.id > 0;",
+									"    tests[`livro ${i} tem titulo`] = livro.titulo;",
+									"});",
+									" "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livros"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
