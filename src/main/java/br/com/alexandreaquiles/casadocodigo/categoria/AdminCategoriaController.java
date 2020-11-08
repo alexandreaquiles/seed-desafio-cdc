@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/admin/categorias")
+@RequestMapping("/admin/categorias")
 public class AdminCategoriaController {
 
     @PersistenceContext

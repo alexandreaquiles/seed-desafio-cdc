@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/admin/autores")
+@RequestMapping("/admin/autores")
 public class AdminAutorController {
 
     @PersistenceContext

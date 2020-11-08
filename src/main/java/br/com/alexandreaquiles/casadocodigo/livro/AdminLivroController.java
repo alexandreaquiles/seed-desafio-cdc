@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/admin/livros")
+@RequestMapping("/admin/livros")
 public class AdminLivroController {
 
     @PersistenceContext
