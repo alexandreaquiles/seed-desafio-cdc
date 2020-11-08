@@ -34,12 +34,19 @@ public class ValidationErrorHandler {
         return createValidationErrors(bindingResult);
     }
 
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(InvalidRelationshipWithEntityException.class)
+    public ValidationErrors handleValidationErrors(InvalidRelationshipWithEntityException exception) {
+        ValidationErrors validationErrors = new ValidationErrors();
+        validationErrors.addFieldError(InvalidRelationshipWithEntityException.FIELD, exception.getMessage());
+        return validationErrors;
+    }
+
     private ValidationErrors createValidationErrors(BindingResult bindingResult) {
         ValidationErrors validationErrors = new ValidationErrors();
 
         bindingResult
                 .getGlobalErrors()
-                .stream()
                 .forEach(globalError -> {
                     String errorMessage = extractErrorMessage(globalError);
                     validationErrors.addGlobalError(errorMessage);
@@ -47,7 +54,6 @@ public class ValidationErrorHandler {
 
         bindingResult
                 .getFieldErrors()
-                .stream()
                 .forEach(fieldError -> {
                     String field = fieldError.getField();
                     String errorMessage = extractErrorMessage(fieldError);

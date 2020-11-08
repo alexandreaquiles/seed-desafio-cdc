@@ -2,10 +2,10 @@ package br.com.alexandreaquiles.casadocodigo.livro;
 
 import br.com.alexandreaquiles.casadocodigo.autor.Autor;
 import br.com.alexandreaquiles.casadocodigo.categoria.Categoria;
+import br.com.alexandreaquiles.casadocodigo.infra.validation.InvalidRelationshipWithEntityException;
 import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -15,7 +15,6 @@ import java.util.function.LongFunction;
 import static br.com.alexandreaquiles.casadocodigo.livro.Livro.Builder.umLivro;
 import static java.lang.String.format;
 import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 public class NovoLivroRequest {
 
@@ -60,9 +59,9 @@ public class NovoLivroRequest {
     public Livro toEntity(LongFunction<Optional<Categoria>> buscaCategoria,
                           LongFunction<Optional<Autor>> buscaAutor) {
         Categoria categoria = buscaCategoria.apply(categoriaId)
-                .orElseThrow(() -> new ResponseStatusException(BAD_REQUEST, format("Id da Categoria inválido: %s", categoriaId)));
+                .orElseThrow(() -> new InvalidRelationshipWithEntityException(Categoria.class, categoriaId));
         Autor autor = buscaAutor.apply(autorId)
-                .orElseThrow(() -> new ResponseStatusException(BAD_REQUEST, format("Id do Autor inválido: %s", autorId)));
+                .orElseThrow(() -> new InvalidRelationshipWithEntityException(Autor.class, autorId));
         return umLivro()
                 .comTitulo(titulo)
                 .comResumo(resumo)
