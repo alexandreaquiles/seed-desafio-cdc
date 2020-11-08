@@ -27,6 +27,16 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4b2d4465-b8be-467a-a18c-30d787f76eb7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"request": {
@@ -96,7 +106,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"raw": "{\n\t\"email\": \"nome-deve-ser-informado@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -123,7 +133,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "7f84d36d-1f0b-42dd-8ede-575cde1cd526",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -133,7 +143,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "7f84d36d-1f0b-42dd-8ede-575cde1cd526"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -147,7 +157,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
+							"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"nome-nao-pode-ser-vazio@boaglio.com\",\n\t\"descricao\": \"Fernando Boaglio, formado pela UNESP em BCC, foi instrutor oficial da Sun Microsystems e da Oracle Education. Atualmente, contribui para alguns projetos open source, como KDE, Jenkins, entre outros. Mantém seu blog em boaglio.com.\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -327,7 +337,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "e0d323de-dfa0-4fd7-b1dc-38a92f8ff6aa",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -337,7 +347,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "e0d323de-dfa0-4fd7-b1dc-38a92f8ff6aa"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -351,7 +361,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\"\n}",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"descricao-deve-ser-informada@boaglio.com\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -378,7 +388,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "9bf50719-10b5-4575-a589-b2f0cd128f65",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -388,7 +398,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "9bf50719-10b5-4575-a589-b2f0cd128f65"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -402,7 +412,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"\"\n}",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"descricao-nao-pode-ser-vazia@boaglio.com\",\n\t\"descricao\": \"\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -429,17 +439,17 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
+								"id": "99d3b084-8ba7-4c3f-9f0f-e78efeab60ff",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
 									"tests[\"contém erro de descricao\"] = responseBody.has(\"descricao\");",
-									"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"tamanho deve ser entre 0 e 400\");",
+									"tests[\"contém mensagem de erro de descricao\"] = responseBody.has(\"tamanho deve ser entre\");",
 									"",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "99d3b084-8ba7-4c3f-9f0f-e78efeab60ff"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -453,7 +463,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"fernando@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}",
+							"raw": "{\n\t\"nome\": \"Fernando Boaglio\",\n\t\"email\": \"descricao-nao-pode-passar-do-maximo@boaglio.com\",\n\t\"descricao\": \"Esse texto tem 408 caracteres e o máximo é 400. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione rerum harum, ea adipisci impedit corporis corrupti. Voluptatibus, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem dolore error repudiandae aliquam sed neque hic ab, expedita autem ratione.\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -537,7 +547,7 @@
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
-									"tests[\"contém erro de email\"] = responseBody.has(\"email do autor deve ser único: email@quejaexiste.com\");",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email do autor deve ser único:\");",
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
 								],
 								"type": "text/javascript"
@@ -548,17 +558,17 @@
 							"script": {
 								"id": "1657e609-2161-4568-9ac6-844a84009165",
 								"exec": [
-									"pm.sendRequest({",
-									"    url: 'http://localhost:8080/api/admin/autores',",
-									"    method: 'POST',",
-									"    header: 'Content-type: application/json',",
-									"    body: {",
-									"        mode: 'raw',",
-									"        raw: JSON.stringify({ nome: \"Alexandre\", email: \"email@quejaexiste.com\", descricao: \"um outro autor\" })",
-									"    }",
-									"}, function (err, res) {",
-									"    pm.expect(res.code).to.eq(200);",
-									"});",
+									"    pm.sendRequest({",
+									"        url: 'http://localhost:8080/api/admin/autores',",
+									"        method: 'POST',",
+									"        header: 'Content-type: application/json',",
+									"        body: {",
+									"            mode: 'raw',",
+									"            raw: JSON.stringify({ nome: \"Alexandre\", email: \"email@quejaexiste.com\", descricao: \"um outro autor\" })",
+									"        }",
+									"    }, function (err, res) {",
+									"        pm.expect(res.code).to.eq(200);",
+									"    });",
 									""
 								],
 								"type": "text/javascript"
@@ -595,6 +605,28 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d90e5df1-a282-482b-8d3b-e8d4eac6b0af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "403ec35e-361d-47f3-9558-44716adc2de7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -826,6 +858,28 @@
 				}
 			],
 			"description": "Cadastro de uma categoria",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "49108a32-cbed-44e1-bfe4-564165914b8b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3536aeca-4f10-4f76-8e82-bc251dee799a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{
@@ -839,31 +893,6 @@
 							"script": {
 								"id": "251c146c-0bfe-407c-9930-eb3a3fed4307",
 								"exec": [
-									"pm.sendRequest({",
-									"    url: 'http://localhost:8080/api/admin/categorias',",
-									"    method: 'POST',",
-									"    header: 'Content-type: application/json',",
-									"    body: {",
-									"        mode: 'raw',",
-									"        raw: JSON.stringify({ nome: \"Programação\"})",
-									"    }",
-									"}, function (err, res) {",
-									"        pm.expect(res.code).to.eq(200);",
-									"        pm.globals.set(\"id_categoria_programacao\", res.json().id);",
-									"});",
-									"",
-									"pm.sendRequest({",
-									"    url: 'http://localhost:8080/api/admin/autores',",
-									"    method: 'POST',",
-									"    header: 'Content-type: application/json',",
-									"    body: {",
-									"        mode: 'raw',",
-									"        raw: JSON.stringify({ nome: \"Felipe Cruz\", email: \"felipe@cruz.com\", descricao: \"Felipe Cruz é desenvolvedor de software há 10 anos. Trabalhou no mercado corporativo e de startups e recentemente atua como Cientista de Dados, área onde reencontrou sua paixão pela construção de software.\" })",
-									"    }",
-									"}, function (err, res) {",
-									"        pm.expect(res.code).to.eq(200);",
-									"        pm.globals.set(\"id_autor_felipe_cruz\", res.json().id);",
-									"});",
 									""
 								],
 								"type": "text/javascript"
@@ -884,7 +913,7 @@
 									"tests[\"livro tem um preço cadastrado\"] = dados.precoEmCentavosDeReais === 2990;",
 									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
 									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"978-85-5519-091-9\";",
-									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2021-03-18\";",
+									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2099-03-18\";",
 									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
 									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
 									""
@@ -898,7 +927,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2021-03-18\",\n    \"categoriaId\": {{id_categoria_programacao}} ,\n    \"autorId\": {{id_autor_felipe_cruz}}\n}",
+							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -920,6 +949,1427 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Livro: sumário não precisa ser informado",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "985b8170-6624-4ff8-87e2-e92ff0a7e330",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "bfa5a315-3d54-4be7-b412-710266e3a24e",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"livro tem um id cadastrado\"] = dados.id > 0;",
+									"tests[\"livro tem um título cadastrado\"] = dados.titulo === \"Python: sumário não precisa ser informado\";",
+									"tests[\"livro tem um resumo cadastrado\"] = dados.resumo &&  dados.resumo.match(/Python é a principal linguagem de programação/);",
+									"tests[\"livro tem um sumário cadastrado\"] = !dados.sumarioEmMarkdown;",
+									"tests[\"livro tem um preço cadastrado\"] = dados.precoEmCentavosDeReais === 2990;",
+									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
+									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"000-85-5519-091-9\";",
+									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2099-03-18\";",
+									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
+									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: sumário não precisa ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"000-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: data de publicação não precisa ser informada",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a7579161-c977-407a-8407-dce7aeb3c3fb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "92120238-9bb6-4087-a92c-8368f2be6fd9",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"livro tem um id cadastrado\"] = dados.id > 0;",
+									"tests[\"livro tem um título cadastrado\"] = dados.titulo === \"Python: data de publicação não precisa ser informada\";",
+									"tests[\"livro tem um resumo cadastrado\"] = dados.resumo &&  dados.resumo.match(/Python é a principal linguagem de programação/);",
+									"tests[\"livro tem um sumário cadastrado\"] = dados.sumarioEmMarkdown && dados.sumarioEmMarkdown.match(/### Parte 1: Seus primeiros passos com o Python/);",
+									"tests[\"livro tem um preço cadastrado\"] = dados.precoEmCentavosDeReais === 2990;",
+									"tests[\"livro tem um número de páginas cadastrado\"] = dados.numeroDePaginas === 269;",
+									"tests[\"livro tem um isbn cadastrado\"] = dados.isbn === \"001-85-5519-091-9\";",
+									"tests[\"livro tem uma data de publicação cadastrada\"] = dados.dataDePublicacao === \"2099-03-18\";",
+									"tests[\"livro tem uma categoria cadastrada\"] = dados.categoria && dados.categoria.id > 0;",
+									"tests[\"livro tem um autor cadastrado\"] = dados.autor && dados.autor.id > 0;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: data de publicação não precisa ser informada\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"001-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: título deve  ser informado",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1f718ebc-7e51-49a0-9689-06df2ae930b2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "27966a20-d8da-4cae-84ac-f72a176af4ef",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de titulo\"] = responseBody.has(\"titulo\");",
+									"tests[\"contém mensagem de erro de titulo\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"002-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: título não deve estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c4848b23-7b29-44c5-a32f-ecca3720960d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecd209aa-f719-4525-99da-678097a3e138",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de titulo\"] = responseBody.has(\"titulo\");",
+									"tests[\"contém mensagem de erro de titulo\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"003-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: título deve ser único",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1264d5e2-1e6b-42ec-8c86-315ce57303e5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "28da79a1-8897-4c8c-b22c-f2286ff8687b",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de titulo\"] = responseBody.has(\"titulo\");",
+									"tests[\"contém mensagem de erro de titulo\"] = responseBody.has(\"título do livro deve ser único:\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"004-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: resumo deve ser informado",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2781a961-4741-4ece-b3b1-cfcef1f24766",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f2ce679a-4163-44b8-92f5-a2727ba3c3b9",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de resumo\"] = responseBody.has(\"resumo\");",
+									"tests[\"contém mensagem de erro de resumo\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: resumo deve ser informado\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"005-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: resumo não deve estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe82c07e-ba27-4622-998b-fd3c1fcb5eb9",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "db2c7bb0-764b-43f2-b13a-9191a24b407f",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de resumo\"] = responseBody.has(\"resumo\");",
+									"tests[\"contém mensagem de erro de resumo\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: resumo não deve estar em branco\",\n    \"resumo\": \"\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"006-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: resumo não pode passar do máximo de caracteres",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1fd08160-33ee-4f00-8b28-72833bc588e4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "0312f37d-96b8-484b-9b39-b9ef9a82238c",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de resumo\"] = responseBody.has(\"resumo\");",
+									"tests[\"contém mensagem de erro de resumo\"] = responseBody.has(\"tamanho deve ser entre\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: resumo não pode passar do máximo de caracteres\",\n    \"resumo\": \"Existe um movimento na comunidade de programação que diz que você deve aprender uma nova linguagem por ano. Isso faz com que você estude novos conceitos e práticas, melhorando a forma como você trabalha no dia a dia. Mas qual será a sua próxima linguagem? Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, ixi 501 caracteres...!\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"007-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: preço deve ser  informado",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f07eb9fd-bba8-416f-8fb3-7a00d4586f24",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8fe3655a-b456-4c94-a033-7edd618c187e",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de precoEmCentavosDeReais\"] = responseBody.has(\"precoEmCentavosDeReais\");",
+									"tests[\"contém mensagem de erro de precoEmCentavosDeReais\"] = responseBody.has(\"deve ser maior que ou igual\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: preço deve ser  informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"008-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: preço não deve estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "52296473-ab82-41ca-866d-2b0eb05a9db1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7eef4375-a6ee-462a-8a9b-52a30a982bc7",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de precoEmCentavosDeReais\"] = responseBody.has(\"precoEmCentavosDeReais\");",
+									"tests[\"contém mensagem de erro de precoEmCentavosDeReais\"] = responseBody.has(\"deve ser maior que ou igual\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: preço não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": \"\",\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"009-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: preço não pode estar abaixo do mínimo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "dbf6eb59-c8f6-4a6c-a44a-f0647a76c96c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7892ab1-4223-4451-ba5c-c78f4bed2ace",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de precoEmCentavosDeReais\"] = responseBody.has(\"precoEmCentavosDeReais\");",
+									"tests[\"contém mensagem de erro de precoEmCentavosDeReais\"] = responseBody.has(\"deve ser maior que ou igual\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: preço não pode estar abaixo do mínimo\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 1999,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"010-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: páginas devem ser  informadas",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "705e7b1a-33f3-46df-bc3a-3fc3dd936198",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e23f6d8e-527f-4e81-8460-d71fd9b3d6bb",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de numeroDePaginas\"] = responseBody.has(\"numeroDePaginas\");",
+									"tests[\"contém mensagem de erro de numeroDePaginas\"] = responseBody.has(\"deve ser maior que ou igual\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: páginas devem ser  informadas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"isbn\": \"011-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: páginas não devem estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3e3fefc6-a6a0-4062-99b3-aee19dff2c6e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1de9c760-1798-4a71-a072-bbcdfb5f8963",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de numeroDePaginas\"] = responseBody.has(\"numeroDePaginas\");",
+									"tests[\"contém mensagem de erro de numeroDePaginas\"] = responseBody.has(\"deve ser maior que ou igual\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: páginas não devem estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": \"\",\n    \"isbn\": \"012-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: páginas não podem estar abaixo do mínimo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "53a6333d-9aa4-4143-8caf-c7d28a249a2a",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "942bfa8d-8390-4322-bbb0-463d86abf3e3",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de numeroDePaginas\"] = responseBody.has(\"numeroDePaginas\");",
+									"tests[\"contém mensagem de erro de numeroDePaginas\"] = responseBody.has(\"deve ser maior que ou igual\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: páginas não podem estar abaixo do mínimo\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 99,\n    \"isbn\": \"013-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: isbn deve ser informado",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b5fb4868-a0a3-45b8-a9c6-0b0238dce170",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ff7b65c-c9a3-4145-afab-e9debab5cdd8",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de isbn\"] = responseBody.has(\"isbn\");",
+									"tests[\"contém mensagem de erro de isbn\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: isbn deve ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: isbn não deve estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8757ba1d-edf2-4ab5-bb97-059fda1d1cea",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "18b5bbca-0b4c-4b67-b8d8-a1de5bfcca60",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de isbn\"] = responseBody.has(\"isbn\");",
+									"tests[\"contém mensagem de erro de isbn\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: isbn não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: isbn deve ser único",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1c3eaec6-bad9-44e7-ad6c-471093fd7d89",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5298ef2c-d9f8-4d04-af64-617391fa713e",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de isbn\"] = responseBody.has(\"isbn\");",
+									"tests[\"contém mensagem de erro de isbn\"] = responseBody.has(\"ISBN do livro deve ser único:\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: isbn deve ser único\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: data de publicação deve ser futura",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "dbf3cc45-812e-4419-9260-123ba5c51335",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e87db68d-6757-4c2d-bce8-810150d3f234",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de dataDePublicacao\"] = responseBody.has(\"dataDePublicacao\");",
+									"tests[\"contém mensagem de erro de dataDePublicacao\"] = responseBody.has(\"deve ser uma data futura\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: data de publicação deve ser futura\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"014-85-5519-091-9\",\n    \"dataDePublicacao\": \"2020-11-07\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: categoria deve ser informada",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a3f2c4ff-fd26-459f-86f4-69ba38eeba93",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "304193c2-5224-4d85-97ae-e8db54a5311f",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de categoriaId\"] = responseBody.has(\"categoriaId\");",
+									"tests[\"contém mensagem de erro de categoriaId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: categoria deve ser informada\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"015-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: categoria não deve estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d90fbf2d-bf7d-426e-a4b4-d3f4d12ed895",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "125f142b-81a2-4a06-8005-410e3b5b266e",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de categoriaId\"] = responseBody.has(\"categoriaId\");",
+									"tests[\"contém mensagem de erro de categoriaId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: categoria não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"016-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": \"\",\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: categoria deve existir",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d7262edc-e63a-42ca-8744-454325fd0ee2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1f1fa52-22d1-4c16-a1d9-b50dc288e7cf",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: categoria deve existir\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"017-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 12345689,\n    \"autorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: autor deve ser informado",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b6278606-c50a-4cd6-ada1-5bb8c29d6865",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3401a20-244a-4d3c-aea0-db9e0632875e",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de autorId\"] = responseBody.has(\"autorId\");",
+									"tests[\"contém mensagem de erro de autorId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: autor deve ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"018-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: autor não deve estar em branco",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cfc5113f-e75b-4b78-836e-b64ef8a58cd3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ffaf6f2-a855-427d-a797-de49510b2e61",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de autorId\"] = responseBody.has(\"autorId\");",
+									"tests[\"contém mensagem de erro de autorId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: autor não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"019-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro: autor deve existir",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "170028d5-4e7e-4c91-b056-8ff42a4a4acd",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8799404b-9bba-4f83-bd43-d21d2a9d107b",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Python: autor deve existir\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"020-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 123456789\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "736f1b7c-a46e-4bbf-979b-8946f29ef2f9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a03954be-663b-487f-81df-68324352f282",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
