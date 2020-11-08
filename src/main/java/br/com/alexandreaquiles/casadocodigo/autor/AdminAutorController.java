@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.admin.categoria;
+package br.com.alexandreaquiles.casadocodigo.autor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,18 +12,18 @@ import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/admin/categorias")
-public class AdminCategoriaController {
+@RequestMapping("/api/admin/autores")
+public class AdminAutorController {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Transactional
     @PostMapping
-    public ResponseEntity<NovaCategoriaResponse> novaCategoria(@RequestBody @Valid NovaCategoriaRequest novaCategoriaRequest) {
-        Categoria categoria = novaCategoriaRequest.toEntity();
-        entityManager.persist(categoria);
-        return ResponseEntity.ok(new NovaCategoriaResponse(categoria));
+    public ResponseEntity<NovoAutorResponse> novoAutor(@RequestBody @Valid NovoAutorRequest novoAutorRequest) {
+        Autor autor = novoAutorRequest.toEntity();
+        entityManager.persist(autor);
+        return ResponseEntity.ok(new NovoAutorResponse(autor));
     }
 
 }

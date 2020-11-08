@@ -1,7 +1,7 @@
-package br.com.alexandreaquiles.casadocodigo.admin.livro;
+package br.com.alexandreaquiles.casadocodigo.livro;
 
-import br.com.alexandreaquiles.casadocodigo.admin.autor.Autor;
-import br.com.alexandreaquiles.casadocodigo.admin.categoria.Categoria;
+import br.com.alexandreaquiles.casadocodigo.autor.Autor;
+import br.com.alexandreaquiles.casadocodigo.categoria.Categoria;
 import br.com.alexandreaquiles.casadocodigo.infra.validation.InvalidRelationshipWithEntityException;
 import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 import java.util.function.LongFunction;
 
-import static br.com.alexandreaquiles.casadocodigo.admin.livro.Livro.Builder.umLivro;
+import static br.com.alexandreaquiles.casadocodigo.livro.Livro.Builder.umLivro;
 
 public class NovoLivroRequest {
 

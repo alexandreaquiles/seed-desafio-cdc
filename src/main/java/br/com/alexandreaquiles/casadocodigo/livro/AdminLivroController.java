@@ -1,7 +1,7 @@
-package br.com.alexandreaquiles.casadocodigo.admin.livro;
+package br.com.alexandreaquiles.casadocodigo.livro;
 
-import br.com.alexandreaquiles.casadocodigo.admin.autor.Autor;
-import br.com.alexandreaquiles.casadocodigo.admin.categoria.Categoria;
+import br.com.alexandreaquiles.casadocodigo.autor.Autor;
+import br.com.alexandreaquiles.casadocodigo.categoria.Categoria;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
