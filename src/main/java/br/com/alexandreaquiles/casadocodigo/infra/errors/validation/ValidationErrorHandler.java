@@ -1,5 +1,6 @@
-package br.com.alexandreaquiles.casadocodigo.infra.validation;
+package br.com.alexandreaquiles.casadocodigo.infra.errors.validation;
 
+import br.com.alexandreaquiles.casadocodigo.infra.errors.Errors;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
@@ -22,34 +23,34 @@ public class ValidationErrorHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ValidationErrors handleValidationErrors(MethodArgumentNotValidException exception) {
+    public Errors handleValidationErrors(MethodArgumentNotValidException exception) {
         BindingResult bindingResult = exception.getBindingResult();
         return createValidationErrors(bindingResult);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BindException.class)
-    public ValidationErrors handleValidationErrors(BindException exception) {
+    public Errors handleValidationErrors(BindException exception) {
         BindingResult bindingResult = exception.getBindingResult();
         return createValidationErrors(bindingResult);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(InvalidRelationshipWithEntityException.class)
-    public ValidationErrors handleValidationErrors(InvalidRelationshipWithEntityException exception) {
-        ValidationErrors validationErrors = new ValidationErrors();
-        validationErrors.addFieldError(InvalidRelationshipWithEntityException.FIELD, exception.getMessage());
-        return validationErrors;
+    public Errors handleValidationErrors(InvalidRelationshipWithEntityException exception) {
+        Errors errors = new Errors();
+        errors.addFieldError(InvalidRelationshipWithEntityException.FIELD, exception.getMessage());
+        return errors;
     }
 
-    private ValidationErrors createValidationErrors(BindingResult bindingResult) {
-        ValidationErrors validationErrors = new ValidationErrors();
+    private Errors createValidationErrors(BindingResult bindingResult) {
+        Errors errors = new Errors();
 
         bindingResult
                 .getGlobalErrors()
                 .forEach(globalError -> {
                     String errorMessage = extractErrorMessage(globalError);
-                    validationErrors.addGlobalError(errorMessage);
+                    errors.addGlobalError(errorMessage);
                 });
 
         bindingResult
@@ -57,10 +58,10 @@ public class ValidationErrorHandler {
                 .forEach(fieldError -> {
                     String field = fieldError.getField();
                     String errorMessage = extractErrorMessage(fieldError);
-                    validationErrors.addFieldError(field, errorMessage);
+                    errors.addFieldError(field, errorMessage);
                 });
 
-        return validationErrors;
+        return errors;
     }
 
     private String extractErrorMessage(ObjectError error) {

@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.infra.validation;
+package br.com.alexandreaquiles.casadocodigo.infra.errors.validation;
 
 public class InvalidRelationshipWithEntityException extends RuntimeException {
 

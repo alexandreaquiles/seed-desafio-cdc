@@ -1,9 +1,9 @@
-package br.com.alexandreaquiles.casadocodigo.infra.validation;
+package br.com.alexandreaquiles.casadocodigo.infra.errors;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValidationErrors {
+public class Errors {
 
     private List<String> globalErrors = new ArrayList<>();
     private List<FieldError> fieldErrors = new ArrayList<>();

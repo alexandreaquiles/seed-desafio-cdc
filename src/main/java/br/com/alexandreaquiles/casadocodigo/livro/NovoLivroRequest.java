@@ -2,8 +2,8 @@ package br.com.alexandreaquiles.casadocodigo.livro;
 
 import br.com.alexandreaquiles.casadocodigo.autor.Autor;
 import br.com.alexandreaquiles.casadocodigo.categoria.Categoria;
-import br.com.alexandreaquiles.casadocodigo.infra.validation.InvalidRelationshipWithEntityException;
-import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
+import br.com.alexandreaquiles.casadocodigo.infra.errors.validation.InvalidRelationshipWithEntityException;
+import br.com.alexandreaquiles.casadocodigo.infra.errors.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.*;

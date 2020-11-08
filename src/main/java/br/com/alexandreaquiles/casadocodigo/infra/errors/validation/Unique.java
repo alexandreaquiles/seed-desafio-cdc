@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.infra.validation;
+package br.com.alexandreaquiles.casadocodigo.infra.errors.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,7 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface Unique {
 
-    String message() default "{br.com.alexandreaquiles.casadocodigo.infra.validation.Unique.message}";
+    String message() default "{br.com.alexandreaquiles.casadocodigo.infra.errors.validation.Unique.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 

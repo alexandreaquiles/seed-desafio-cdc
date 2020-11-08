@@ -2388,6 +2388,53 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Detalhe de um livro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "295928aa-e3c0-4c7a-83dd-462655bd0dd3",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"livro tem um titulo\"] = dados.titulo;",
+									"tests[\"livro tem um resumo\"] = dados.resumo;",
+									"tests[\"livro tem um sumario\"] = dados.sumarioEmMarkdown;",
+									"tests[\"livro tem um precoEmCentavosDeReais\"] = dados.precoEmCentavosDeReais;",
+									"tests[\"livro tem um numeroDePaginas\"] = dados.numeroDePaginas;",
+									"tests[\"livro tem um isbn\"] = dados.isbn;",
+									"tests[\"livro tem um dataDePublicacao\"] = dados.dataDePublicacao;",
+									"",
+									"tests[\"livro tem um autor\"] = dados.autor;",
+									"tests[\"autor do livro tem um nome\"] = dados.autor && dados.autor.nome;",
+									"tests[\"autor do livro tem uma descricao\"] = dados.autor && dados.autor.descricao;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/livros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livros",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [

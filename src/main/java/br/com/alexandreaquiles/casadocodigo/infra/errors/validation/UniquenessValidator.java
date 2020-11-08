@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.infra.validation;
+package br.com.alexandreaquiles.casadocodigo.infra.errors.validation;
 
 import org.springframework.util.Assert;
 

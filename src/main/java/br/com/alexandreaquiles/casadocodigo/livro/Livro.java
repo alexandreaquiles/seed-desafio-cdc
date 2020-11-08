@@ -107,6 +107,10 @@ public class Livro {
         return autor.getId();
     }
 
+    public Autor getAutor() {
+        return autor;
+    }
+
     static class Builder {
 
         private String titulo;

@@ -1,6 +1,6 @@
 package br.com.alexandreaquiles.casadocodigo.autor;
 
-import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
+import br.com.alexandreaquiles.casadocodigo.infra.errors.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Email;
