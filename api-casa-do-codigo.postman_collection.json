@@ -2435,6 +2435,42 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Livro: não encontrado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6bc54ec3-70f6-4e6c-9131-30a19ce7b689",
+								"exec": [
+									"tests[\"status 404 retornado\"] = responseCode.code === 404;",
+									"",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/livros/123456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livros",
+								"123456789"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
