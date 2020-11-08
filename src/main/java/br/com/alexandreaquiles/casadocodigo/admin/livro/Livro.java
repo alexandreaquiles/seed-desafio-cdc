@@ -5,6 +5,7 @@ import br.com.alexandreaquiles.casadocodigo.admin.categoria.Categoria;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
@@ -40,11 +41,11 @@ public class Livro {
     @Future
     private LocalDate dataDePublicacao;
 
-    @NotNull
+    @NotNull @Valid
     @ManyToOne(optional = false)
     private Categoria categoria;
 
-    @NotNull
+    @NotNull @Valid
     @ManyToOne(optional = false)
     private Autor autor;
 
