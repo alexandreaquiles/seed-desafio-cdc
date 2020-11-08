@@ -2,6 +2,8 @@ package br.com.alexandreaquiles.casadocodigo.admin.livro;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.LocalDate;
+
 public class NovoLivroResponse {
 
     @JsonProperty
@@ -26,7 +28,7 @@ public class NovoLivroResponse {
     private String isbn;
 
     @JsonProperty
-    private String dataDePublicacao;
+    private LocalDate dataDePublicacao;
 
     @JsonProperty
     private Long categoriaId;
@@ -42,7 +44,7 @@ public class NovoLivroResponse {
         this.precoEmCentavosDeReais = livro.getPrecoEmCentavosDeReais();
         this.numeroDePaginas = livro.getNumeroDePaginas();
         this.isbn = livro.getIsbn();
-        this.dataDePublicacao = livro.getDataDePublicacaoFormatada();
+        this.dataDePublicacao = livro.getDataDePublicacao();
         this.categoriaId = livro.getCategoriaId();
         this.autorId = livro.getAutorId();
     }

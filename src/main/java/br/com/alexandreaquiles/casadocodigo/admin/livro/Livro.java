@@ -8,7 +8,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-import static java.time.format.DateTimeFormatter.ISO_DATE;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -93,8 +92,8 @@ public class Livro {
         return isbn;
     }
 
-    public String getDataDePublicacaoFormatada() {
-        return dataDePublicacao.format(ISO_DATE);
+    public LocalDate getDataDePublicacao() {
+        return dataDePublicacao;
     }
 
     public Long getCategoriaId() {
