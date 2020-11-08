@@ -1,7 +1,7 @@
-package br.com.alexandreaquiles.casadocodigo.livro;
+package br.com.alexandreaquiles.casadocodigo.admin.livro;
 
-import br.com.alexandreaquiles.casadocodigo.autor.Autor;
-import br.com.alexandreaquiles.casadocodigo.categoria.Categoria;
+import br.com.alexandreaquiles.casadocodigo.admin.autor.Autor;
+import br.com.alexandreaquiles.casadocodigo.admin.categoria.Categoria;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;

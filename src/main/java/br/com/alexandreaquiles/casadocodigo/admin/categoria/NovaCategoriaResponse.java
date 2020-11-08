@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.categoria;
+package br.com.alexandreaquiles.casadocodigo.admin.categoria;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.autor;
+package br.com.alexandreaquiles.casadocodigo.admin.autor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

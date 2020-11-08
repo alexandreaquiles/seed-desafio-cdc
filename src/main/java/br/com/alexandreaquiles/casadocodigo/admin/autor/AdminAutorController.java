@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.autor;
+package br.com.alexandreaquiles.casadocodigo.admin.autor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,11 +11,11 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/admin/autores")
-public class AutorController {
+public class AdminAutorController {
 
     private final AutorRepository autorRepository;
 
-    public AutorController(AutorRepository autorRepository) {
+    public AdminAutorController(AutorRepository autorRepository) {
         this.autorRepository = autorRepository;
     }
 

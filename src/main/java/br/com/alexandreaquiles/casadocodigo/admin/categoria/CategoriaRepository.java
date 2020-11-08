@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.categoria;
+package br.com.alexandreaquiles.casadocodigo.admin.categoria;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

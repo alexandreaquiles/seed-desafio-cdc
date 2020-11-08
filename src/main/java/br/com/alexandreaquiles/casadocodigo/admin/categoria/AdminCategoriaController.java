@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.categoria;
+package br.com.alexandreaquiles.casadocodigo.admin.categoria;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,11 +11,11 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/admin/categorias")
-public class CategoriaController {
+public class AdminCategoriaController {
 
     private final CategoriaRepository categoriaRepository;
 
-    public CategoriaController(CategoriaRepository categoriaRepository) {
+    public AdminCategoriaController(CategoriaRepository categoriaRepository) {
         this.categoriaRepository = categoriaRepository;
     }
 

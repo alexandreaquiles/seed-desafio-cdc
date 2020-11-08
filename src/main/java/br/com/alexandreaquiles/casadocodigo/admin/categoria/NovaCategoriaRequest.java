@@ -1,4 +1,4 @@
-package br.com.alexandreaquiles.casadocodigo.categoria;
+package br.com.alexandreaquiles.casadocodigo.admin.categoria;
 
 import br.com.alexandreaquiles.casadocodigo.infra.validation.Unique;
 import com.fasterxml.jackson.annotation.JsonProperty;

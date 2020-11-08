@@ -1,7 +1,7 @@
-package br.com.alexandreaquiles.casadocodigo.livro;
+package br.com.alexandreaquiles.casadocodigo.admin.livro;
 
-import br.com.alexandreaquiles.casadocodigo.autor.AutorRepository;
-import br.com.alexandreaquiles.casadocodigo.categoria.CategoriaRepository;
+import br.com.alexandreaquiles.casadocodigo.admin.autor.AutorRepository;
+import br.com.alexandreaquiles.casadocodigo.admin.categoria.CategoriaRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,13 +13,13 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/admin/livros")
-public class LivroController {
+public class AdminLivroController {
 
     private final LivroRepository livroRepository;
     private final AutorRepository autorRepository;
     private final CategoriaRepository categoriaRepository;
 
-    public LivroController(LivroRepository livroRepository, AutorRepository autorRepository, CategoriaRepository categoriaRepository) {
+    public AdminLivroController(LivroRepository livroRepository, AutorRepository autorRepository, CategoriaRepository categoriaRepository) {
         this.livroRepository = livroRepository;
         this.autorRepository = autorRepository;
         this.categoriaRepository = categoriaRepository;
