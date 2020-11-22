@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "56e6579f-929d-4585-94e5-f8d76755f3c8",
+		"_postman_id": "2fc7ef82-d5ba-4b03-b524-4c4b6087be8e",
 		"name": "API da Casa do Código",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "063ff9b6-b537-4cc8-8b19-64f6dc338fa0",
+								"id": "69806040-c00a-403e-aada-8a71c2062de5",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -31,7 +31,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "4b2d4465-b8be-467a-a18c-30d787f76eb7",
+								"id": "3e7df601-a6fb-413b-aeeb-6e7b745508d9",
 								"exec": [
 									""
 								],
@@ -76,7 +76,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "50c25462-d5aa-4c47-828e-e7eabce8cea3",
+								"id": "a26563a1-cc95-42e0-99fa-0ed691ccf05a",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -133,7 +133,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7f84d36d-1f0b-42dd-8ede-575cde1cd526",
+								"id": "0370d116-6b6b-48b6-be45-1a5a915e0fd9",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -194,7 +194,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "4ad272f8-189c-43d1-977a-a705ad85e824"
+								"id": "ec7338a0-bc9b-4e65-b015-d4ef61e07e67"
 							}
 						}
 					],
@@ -245,7 +245,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "185c0fa8-ad9b-4201-88ee-899cb3761e36"
+								"id": "9730a47a-1756-4524-9ce3-60ad77d936bc"
 							}
 						}
 					],
@@ -296,7 +296,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "c2e528d5-92e5-4260-9c62-3e7e4a372c6e"
+								"id": "9acc6501-d2c7-4edc-aeae-8d3b3df2d6e7"
 							}
 						}
 					],
@@ -337,7 +337,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e0d323de-dfa0-4fd7-b1dc-38a92f8ff6aa",
+								"id": "c9978197-453b-4c0c-9397-1bc1df18fc0d",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -388,7 +388,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9bf50719-10b5-4575-a589-b2f0cd128f65",
+								"id": "37acb6b4-043e-44c3-b6d5-e4f20942c00e",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -439,7 +439,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "99d3b084-8ba7-4c3f-9f0f-e78efeab60ff",
+								"id": "c5efbd41-2d79-41ed-8cbf-fb6c49bdcc6d",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -502,7 +502,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "648aa63a-3fef-4dc1-933e-4a487806ee1b"
+								"id": "8f985cf9-7712-40c5-8753-14fceb369259"
 							}
 						}
 					],
@@ -543,7 +543,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ed544a44-f4c4-42aa-8836-951314434e3d",
+								"id": "2d3239dd-055d-4b2c-b8f1-18fb7a9c2a6f",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -556,7 +556,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1657e609-2161-4568-9ac6-844a84009165",
+								"id": "6bcea970-711c-44d3-88c6-78673711d10d",
 								"exec": [
 									"    pm.sendRequest({",
 									"        url: 'http://localhost:8080/api/admin/autores',",
@@ -611,7 +611,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d90e5df1-a282-482b-8d3b-e8d4eac6b0af",
+						"id": "55b27b10-436b-478d-be55-4c4a4602b56a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -621,7 +621,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "403ec35e-361d-47f3-9558-44716adc2de7",
+						"id": "a3bb815d-ceba-49aa-a70c-6379f2963f8c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -640,7 +640,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8fe23a90-a157-41de-a57f-865c996c5cae",
+								"id": "dfebbd39-e712-4b46-acf7-6ef32cc9f04b",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -700,7 +700,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "9fec115e-ce71-4b48-934c-f72abbfaed3d"
+								"id": "d890259f-1b90-4895-afe5-8f89bd302137"
 							}
 						}
 					],
@@ -751,7 +751,7 @@
 									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
 									""
 								],
-								"id": "d7914d9e-f5c8-4988-a729-d6ebb2bf92d5"
+								"id": "9494e5e5-f239-42e4-a37e-6f6d8acf27c3"
 							}
 						}
 					],
@@ -792,7 +792,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "647e69fe-2e84-46ba-8922-ab96e9557659",
+								"id": "4f9bca1a-051b-4228-8b50-2ac32d3461ac",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -806,7 +806,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81b0881d-c007-4f5b-8177-53b45d4b356a",
+								"id": "2d33b932-56b1-49a9-ba0e-387d1a37ffed",
 								"exec": [
 									"pm.sendRequest({",
 									"    url: 'http://localhost:8080/api/admin/categorias',",
@@ -862,7 +862,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "49108a32-cbed-44e1-bfe4-564165914b8b",
+						"id": "21180ba8-32fe-43ff-8adb-def0b68d80b4",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -872,7 +872,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3536aeca-4f10-4f76-8e82-bc251dee799a",
+						"id": "13af1f21-2f4d-4184-86e3-cc394113692b",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -891,7 +891,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "251c146c-0bfe-407c-9930-eb3a3fed4307",
+								"id": "daea7c96-273f-41f4-a755-f5388afd4d6b",
 								"exec": [
 									""
 								],
@@ -901,7 +901,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "afc14467-70c3-4a1b-a43a-9d2f24cdcaec",
+								"id": "f39ab6c6-5eb8-471b-957c-2900888dc935",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -956,7 +956,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "985b8170-6624-4ff8-87e2-e92ff0a7e330",
+								"id": "fc23b7cf-4547-4922-998c-f8afb02a7153",
 								"exec": [
 									""
 								],
@@ -966,7 +966,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bfa5a315-3d54-4be7-b412-710266e3a24e",
+								"id": "c2942434-e9b1-4a9b-b92b-4885e1416e30",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -1021,7 +1021,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "a7579161-c977-407a-8407-dce7aeb3c3fb",
+								"id": "b8610f92-2351-4f34-849b-0e1edcdf4625",
 								"exec": [
 									""
 								],
@@ -1031,7 +1031,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "92120238-9bb6-4087-a92c-8368f2be6fd9",
+								"id": "dd58f35d-a1d3-4b41-938b-649460f5dd13",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -1086,7 +1086,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1f718ebc-7e51-49a0-9689-06df2ae930b2",
+								"id": "5e31d9bb-8d9a-464c-8f9e-81996ae68c05",
 								"exec": [
 									""
 								],
@@ -1096,7 +1096,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "27966a20-d8da-4cae-84ac-f72a176af4ef",
+								"id": "fe0091ee-160c-4f2e-9fbb-958873402500",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1144,7 +1144,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c4848b23-7b29-44c5-a32f-ecca3720960d",
+								"id": "d20f1563-110c-4f25-95f3-86dd6c1fcc61",
 								"exec": [
 									""
 								],
@@ -1154,7 +1154,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ecd209aa-f719-4525-99da-678097a3e138",
+								"id": "bcf23224-ed12-457e-971b-c69c8eb11501",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1202,7 +1202,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1264d5e2-1e6b-42ec-8c86-315ce57303e5",
+								"id": "b6ceead6-61a3-4820-88ca-a74f35bd379e",
 								"exec": [
 									""
 								],
@@ -1212,7 +1212,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "28da79a1-8897-4c8c-b22c-f2286ff8687b",
+								"id": "bbb5bbd7-8d70-4998-a242-def25504542b",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1259,7 +1259,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "2781a961-4741-4ece-b3b1-cfcef1f24766",
+								"id": "5638cd8b-2d55-4d74-928c-6a5484f2e1b0",
 								"exec": [
 									""
 								],
@@ -1269,7 +1269,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f2ce679a-4163-44b8-92f5-a2727ba3c3b9",
+								"id": "a55e7cdf-77f7-415f-9099-5e3402998547",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1317,7 +1317,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "fe82c07e-ba27-4622-998b-fd3c1fcb5eb9",
+								"id": "554d3624-2806-4c45-8094-8ce50160ecf8",
 								"exec": [
 									""
 								],
@@ -1327,7 +1327,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "db2c7bb0-764b-43f2-b13a-9191a24b407f",
+								"id": "0d7fae94-f88c-4f51-9c12-07835c2ece2e",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1375,7 +1375,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1fd08160-33ee-4f00-8b28-72833bc588e4",
+								"id": "b46e4441-0d73-431e-86e3-c2c29534d4f6",
 								"exec": [
 									""
 								],
@@ -1385,7 +1385,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0312f37d-96b8-484b-9b39-b9ef9a82238c",
+								"id": "659f058e-4ca9-444b-a0c3-ae3cf5dbd6e0",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1433,7 +1433,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f07eb9fd-bba8-416f-8fb3-7a00d4586f24",
+								"id": "fdbce229-02e7-4edb-bc59-1b6a82e6dc8b",
 								"exec": [
 									""
 								],
@@ -1443,7 +1443,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8fe3655a-b456-4c94-a033-7edd618c187e",
+								"id": "282720bd-2981-46b9-bb49-0bca548de782",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1491,7 +1491,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "52296473-ab82-41ca-866d-2b0eb05a9db1",
+								"id": "d4ccecc5-ad24-4cc0-9fa6-754ec933e7c2",
 								"exec": [
 									""
 								],
@@ -1501,7 +1501,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7eef4375-a6ee-462a-8a9b-52a30a982bc7",
+								"id": "be0d9bca-52d2-4742-b928-a0f1dcc61235",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1549,7 +1549,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "dbf6eb59-c8f6-4a6c-a44a-f0647a76c96c",
+								"id": "6f9c8fdb-674a-4c1a-9793-7f219aac9a73",
 								"exec": [
 									""
 								],
@@ -1559,7 +1559,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b7892ab1-4223-4451-ba5c-c78f4bed2ace",
+								"id": "d201c616-ff60-4769-ad9d-796299ccac3e",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1607,7 +1607,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "705e7b1a-33f3-46df-bc3a-3fc3dd936198",
+								"id": "2e7040c7-fde8-4c6f-82bb-6a8ac1cf814d",
 								"exec": [
 									""
 								],
@@ -1617,7 +1617,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e23f6d8e-527f-4e81-8460-d71fd9b3d6bb",
+								"id": "4aaef268-106d-409f-8ead-5e1c2129d9b4",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1665,7 +1665,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "3e3fefc6-a6a0-4062-99b3-aee19dff2c6e",
+								"id": "de06f312-5f59-4705-8806-0bee154aee19",
 								"exec": [
 									""
 								],
@@ -1675,7 +1675,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1de9c760-1798-4a71-a072-bbcdfb5f8963",
+								"id": "e0b53e1d-896f-46b5-b72b-54e2c6ec6f33",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1723,7 +1723,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "53a6333d-9aa4-4143-8caf-c7d28a249a2a",
+								"id": "e442f3c5-6123-418d-86c4-679c3f8ca620",
 								"exec": [
 									""
 								],
@@ -1733,7 +1733,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "942bfa8d-8390-4322-bbb0-463d86abf3e3",
+								"id": "91cd7314-ee73-4493-81cf-30f2c05ac40b",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1781,7 +1781,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b5fb4868-a0a3-45b8-a9c6-0b0238dce170",
+								"id": "d97b5e68-b727-4e29-87db-cd19d84eaea4",
 								"exec": [
 									""
 								],
@@ -1791,7 +1791,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5ff7b65c-c9a3-4145-afab-e9debab5cdd8",
+								"id": "1bcfc70d-4461-4db9-abad-f2b28a05aac5",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1839,7 +1839,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8757ba1d-edf2-4ab5-bb97-059fda1d1cea",
+								"id": "6e211d78-5bc0-43f6-833f-8c2f7452e283",
 								"exec": [
 									""
 								],
@@ -1849,7 +1849,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "18b5bbca-0b4c-4b67-b8d8-a1de5bfcca60",
+								"id": "b683ad76-99f6-4212-8662-824676239300",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1897,7 +1897,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1c3eaec6-bad9-44e7-ad6c-471093fd7d89",
+								"id": "24ff4b5f-4344-4382-a51a-cc33ec23855a",
 								"exec": [
 									""
 								],
@@ -1907,7 +1907,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5298ef2c-d9f8-4d04-af64-617391fa713e",
+								"id": "247e98fd-5688-4089-b18c-ec9ba0c00e45",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -1955,7 +1955,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "dbf3cc45-812e-4419-9260-123ba5c51335",
+								"id": "416f0a0e-992c-48af-8658-67d42b630d3f",
 								"exec": [
 									""
 								],
@@ -1965,7 +1965,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e87db68d-6757-4c2d-bce8-810150d3f234",
+								"id": "eb6f0fb8-61a7-4443-bb2a-064ec6da5b82",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2013,7 +2013,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "a3f2c4ff-fd26-459f-86f4-69ba38eeba93",
+								"id": "044421e1-1066-46b8-afa8-f81879880f83",
 								"exec": [
 									""
 								],
@@ -2023,7 +2023,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "304193c2-5224-4d85-97ae-e8db54a5311f",
+								"id": "8bfcf0b4-a454-46f6-bb42-4284f0bcc552",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2071,7 +2071,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d90fbf2d-bf7d-426e-a4b4-d3f4d12ed895",
+								"id": "ffb3eb79-4631-4b18-83c8-b5ba2726682e",
 								"exec": [
 									""
 								],
@@ -2081,7 +2081,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "125f142b-81a2-4a06-8005-410e3b5b266e",
+								"id": "91884d5e-b081-462a-bd02-662c5894872a",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2129,7 +2129,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d7262edc-e63a-42ca-8744-454325fd0ee2",
+								"id": "c4c53fd6-0fb9-44eb-9404-4e5de233e92e",
 								"exec": [
 									""
 								],
@@ -2139,7 +2139,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c1f1fa52-22d1-4c16-a1d9-b50dc288e7cf",
+								"id": "2bcb63a2-f4cd-465b-bd90-ea8f4196bb8f",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2184,7 +2184,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b6278606-c50a-4cd6-ada1-5bb8c29d6865",
+								"id": "973bcbd9-efbd-4b01-8a9e-12d19c6de11d",
 								"exec": [
 									""
 								],
@@ -2194,7 +2194,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e3401a20-244a-4d3c-aea0-db9e0632875e",
+								"id": "ab769a4a-6424-4c0d-99ec-e6b87f839a29",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2242,7 +2242,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "cfc5113f-e75b-4b78-836e-b64ef8a58cd3",
+								"id": "0fe5ebae-f6d5-4243-a7ed-98d09b9d19c1",
 								"exec": [
 									""
 								],
@@ -2252,7 +2252,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9ffaf6f2-a855-427d-a797-de49510b2e61",
+								"id": "a9b37fea-bf97-493c-a34b-fd94444ee724",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2300,7 +2300,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "170028d5-4e7e-4c91-b056-8ff42a4a4acd",
+								"id": "e0aeddc7-e97a-4da3-b8d3-a4dde73c7d04",
 								"exec": [
 									""
 								],
@@ -2310,7 +2310,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8799404b-9bba-4f83-bd43-d21d2a9d107b",
+								"id": "e8d687f2-d12e-4b76-86cd-27a3b691a78c",
 								"exec": [
 									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
 									"",
@@ -2355,7 +2355,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cb580677-2c1a-4499-8777-c1f28720af0c",
+								"id": "672a7d01-0d98-45ad-bde9-da9373c784ef",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -2395,7 +2395,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "295928aa-e3c0-4c7a-83dd-462655bd0dd3",
+								"id": "7f696300-8639-47c5-9878-003e1b849b93",
 								"exec": [
 									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
 									"",
@@ -2442,7 +2442,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6bc54ec3-70f6-4e6c-9131-30a19ce7b689",
+								"id": "35f304f6-a8b5-48a2-806e-8b830d5dae25",
 								"exec": [
 									"tests[\"status 404 retornado\"] = responseCode.code === 404;",
 									"",
@@ -2477,7 +2477,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "736f1b7c-a46e-4bbf-979b-8946f29ef2f9",
+						"id": "cc9048ef-7090-4fbe-8db5-4da02982f8de",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2487,12 +2487,228 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a03954be-663b-487f-81df-68324352f282",
+						"id": "9304467d-21d4-4fdb-802d-43321fb33da9",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "pais",
+			"item": [
+				{
+					"name": "Cadastro de país",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b91159b2-1756-4783-9e02-b25518705c59",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"país tem um id cadastrado\"] = dados.id > 0;",
+									"tests[\"país tem um nome cadastrado\"] = dados.nome === \"Brasil\";",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Brasil\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/paises",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"paises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "País: nome deve ser informado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2979f492-a117-4777-abd6-12ca20b1a394",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/paises",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"paises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "País: nome não pode ser vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "69076562-bb89-447d-837c-978d3f403587",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/paises",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"paises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "País: nome é único",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "71299238-1c78-4328-a31c-9d5e46675bbb",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome do país deve ser único: País que já existe\");",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6d46b9e5-b753-4553-955a-416cd1964395",
+								"exec": [
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/paises',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"País que já existe\" })",
+									"    }",
+									"}, function (err, res) {",
+									"    pm.expect(res.code).to.eq(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"País que já existe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/paises",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"paises"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -2502,7 +2718,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b4307416-e403-46c0-b151-ed067b52299d",
+				"id": "488264ef-781d-43f4-ab06-386fde8cbdf6",
 				"type": "text/javascript",
 				"exec": [
 					"var Header = require('postman-collection').Header;",
@@ -2514,7 +2730,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c9b7553c-b480-4118-998f-f72d2dc733d9",
+				"id": "0dbea518-19b3-4eb2-9f3f-657a44e78bb3",
 				"type": "text/javascript",
 				"exec": [
 					""
