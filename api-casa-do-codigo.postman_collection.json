@@ -2712,6 +2712,359 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "estado",
+			"item": [
+				{
+					"name": "Cadastro de estado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c18b0e32-c61c-4fec-a949-81f2099a0fee",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									"",
+									"var dados = JSON.parse(responseBody);",
+									"tests[\"estado tem um id cadastrado\"] = dados.id > 0;",
+									"tests[\"estado tem um nome cadastrado\"] = dados.nome === \"São Paulo\";",
+									"tests[\"estado tem um país cadastrado\"] = dados.paisId > 0;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"São Paulo\",\n    \"paisId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado: nome deve ser informado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "040c7f6d-0921-4ecf-b337-d4df93377d6a",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paisId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado: nome não pode ser vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "41d3b60f-5541-4167-886c-e82bfa1afb1b",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"\",\n    \"paisId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado: nome é unico",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8ff1a817-c3cc-43a8-a8a5-9a93811e4017",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"nome do estado deve ser único: Estado que já existe\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "43e469c0-9fc2-40be-9908-a3d8b63ace20",
+								"exec": [
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/estados',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"Estado que já existe\", paisId: 1 })",
+									"    }",
+									"}, function (err, res) {",
+									"    pm.expect(res.code).to.eq(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Estado que já existe\",\n    \"paisId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado: país deve ser informado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "93625af2-bb52-44b7-a29e-15f5c0eb10f2",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de paisId\"] = responseBody.has(\"paisId\");",
+									"tests[\"contém mensagem de erro de paisId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Bahia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado: país não deve estar em branco",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a44cf5d2-3fd4-489d-9893-6a76c19f52ce",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de paisId\"] = responseBody.has(\"paisId\");",
+									"tests[\"contém mensagem de erro de paisId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Bahia\",\n    \"paisId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado: país deve existir",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6ceb121-4e87-4906-b8e8-9eb71c70069e",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Bahia\",\n    \"paisId\": 123456789\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/admin/estados",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
