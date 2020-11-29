@@ -558,17 +558,17 @@
 							"script": {
 								"id": "6bcea970-711c-44d3-88c6-78673711d10d",
 								"exec": [
-									"    pm.sendRequest({",
-									"        url: 'http://localhost:8080/api/admin/autores',",
-									"        method: 'POST',",
-									"        header: 'Content-type: application/json',",
-									"        body: {",
-									"            mode: 'raw',",
-									"            raw: JSON.stringify({ nome: \"Alexandre\", email: \"email@quejaexiste.com\", descricao: \"um outro autor\" })",
-									"        }",
-									"    }, function (err, res) {",
-									"        pm.expect(res.code).to.eq(200);",
-									"    });",
+									"pm.sendRequest({",
+									"    url: 'http://localhost:8080/api/admin/autores',",
+									"    method: 'POST',",
+									"    header: 'Content-type: application/json',",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: JSON.stringify({ nome: \"Alexandre\", email: \"email@quejaexiste.com\", descricao: \"um outro autor\" })",
+									"    }",
+									"}, function (err, res) {",
+									"    pm.expect(res.code).to.eq(200);",
+									"});",
 									""
 								],
 								"type": "text/javascript"
@@ -927,7 +927,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -992,7 +992,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: sumário não precisa ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"000-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: sumário não precisa ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"000-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1057,7 +1057,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: data de publicação não precisa ser informada\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"001-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: data de publicação não precisa ser informada\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"001-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1115,7 +1115,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"002-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"002-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1173,7 +1173,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"003-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"003-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1230,7 +1230,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"004-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: Escreva seus primeiros programas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"004-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1288,7 +1288,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: resumo deve ser informado\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"005-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 ,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: resumo deve ser informado\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"005-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1346,7 +1346,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: resumo não deve estar em branco\",\n    \"resumo\": \"\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"006-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: resumo não deve estar em branco\",\n    \"resumo\": \"\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"006-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1404,7 +1404,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: resumo não pode passar do máximo de caracteres\",\n    \"resumo\": \"Existe um movimento na comunidade de programação que diz que você deve aprender uma nova linguagem por ano. Isso faz com que você estude novos conceitos e práticas, melhorando a forma como você trabalha no dia a dia. Mas qual será a sua próxima linguagem? Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, ixi 501 caracteres...!\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"007-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1}\n}",
+							"raw": "{\n    \"titulo\": \"Python: resumo não pode passar do máximo de caracteres\",\n    \"resumo\": \"Existe um movimento na comunidade de programação que diz que você deve aprender uma nova linguagem por ano. Isso faz com que você estude novos conceitos e práticas, melhorando a forma como você trabalha no dia a dia. Mas qual será a sua próxima linguagem? Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, ixi 501 caracteres...!\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"007-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1462,7 +1462,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: preço deve ser  informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"008-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: preço deve ser  informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"008-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1520,7 +1520,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: preço não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": \"\",\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"009-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: preço não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": \"\",\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"009-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1578,7 +1578,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: preço não pode estar abaixo do mínimo\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 1999,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"010-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: preço não pode estar abaixo do mínimo\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 1999,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"010-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1636,7 +1636,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: páginas devem ser  informadas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"isbn\": \"011-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: páginas devem ser  informadas\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"isbn\": \"011-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1694,7 +1694,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: páginas não devem estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": \"\",\n    \"isbn\": \"012-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: páginas não devem estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": \"\",\n    \"isbn\": \"012-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1752,7 +1752,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: páginas não podem estar abaixo do mínimo\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 99,\n    \"isbn\": \"013-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: páginas não podem estar abaixo do mínimo\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 99,\n    \"isbn\": \"013-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1810,7 +1810,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: isbn deve ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: isbn deve ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1868,7 +1868,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: isbn não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: isbn não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1926,7 +1926,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: isbn deve ser único\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: isbn deve ser único\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"978-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1984,7 +1984,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: data de publicação deve ser futura\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"014-85-5519-091-9\",\n    \"dataDePublicacao\": \"2020-11-07\",\n    \"categoriaId\": 1,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: data de publicação deve ser futura\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"014-85-5519-091-9\",\n    \"dataDePublicacao\": \"2020-11-07\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2042,7 +2042,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: categoria deve ser informada\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"015-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: categoria deve ser informada\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"015-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2100,7 +2100,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: categoria não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"016-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": \"\",\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: categoria não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"016-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": \"\",\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2155,7 +2155,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: categoria deve existir\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"017-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 12345689,\n    \"autorId\": 1\n}",
+							"raw": "{\n    \"titulo\": \"Python: categoria deve existir\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"017-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 9007199254740991,\n    \"autorId\": {{idAutorDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2213,7 +2213,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: autor deve ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"018-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1 \n}",
+							"raw": "{\n    \"titulo\": \"Python: autor deve ser informado\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"018-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2271,7 +2271,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: autor não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"019-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": \"\"\n}",
+							"raw": "{\n    \"titulo\": \"Python: autor não deve estar em branco\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"019-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2326,7 +2326,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"titulo\": \"Python: autor deve existir\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"020-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": 1,\n    \"autorId\": 123456789\n}",
+							"raw": "{\n    \"titulo\": \"Python: autor deve existir\",\n    \"resumo\": \"Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzilo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.\",\n    \"sumarioEmMarkdown\": \"### Parte 1: Seus primeiros passos com o Python \\n - Iniciando com Python \\n 1. A linguagem Python \\n 1. De Python 2 para Python 3 \\n 1. Diversos interpretadores e mesma linguagem \\n 1. Preparando o ambiente \\n 1. Primeiro passo: abra o interpretador \\n 1. Primeiras explorações \\n 1. Próximos passos\",\n    \"precoEmCentavosDeReais\": 2990,\n    \"numeroDePaginas\": 269,\n    \"isbn\": \"020-85-5519-091-9\",\n    \"dataDePublicacao\": \"2099-03-18\",\n    \"categoriaId\": {{idCategoriaDoLivro}},\n    \"autorId\": 9007199254740991\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2480,7 +2480,50 @@
 						"id": "cc9048ef-7090-4fbe-8db5-4da02982f8de",
 						"type": "text/javascript",
 						"exec": [
-							""
+							"const promiseCategoria = new Promise((resolve, reject) => {",
+							"    pm.sendRequest({",
+							"        url: 'http://localhost:8080/api/admin/categorias',",
+							"        method: 'POST',",
+							"        header: 'Content-type: application/json',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({ nome: pm.variables.replaceIn('{{$randomCatchPhrase}}{{$randomInt}}') })",
+							"        }",
+							"    }, function (err, res) {",
+							"        if (err) {",
+							"            reject();",
+							"        }",
+							"        pm.expect(res.code).to.eq(200);",
+							"        const jsonCategoria = res.json();",
+							"        pm.expect(jsonCategoria.id).to.be.a(\"number\");",
+							"        pm.expect(jsonCategoria.id).to.be.above(0);",
+							"        pm.variables.set(\"idCategoriaDoLivro\", jsonCategoria.id);",
+							"        resolve();",
+							"    });",
+							"});",
+							"const promiseAutor = new Promise((resolve, reject) => {",
+							"    pm.sendRequest({",
+							"        url: 'http://localhost:8080/api/admin/autores',",
+							"        method: 'POST',",
+							"        header: 'Content-type: application/json',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({ nome: pm.variables.replaceIn('{{$randomFullName}}{{$randomInt}}'), email: pm.variables.replaceIn('{{$randomInt}}{{$randomEmail}}'), descricao: \"Cansado de guerra\" })",
+							"        }",
+							"    }, function (err, res) {",
+							"        if (err) {",
+							"            reject();",
+							"        }",
+							"        pm.expect(res.code).to.eq(200);",
+							"        const jsonAutor = res.json();",
+							"        pm.expect(jsonAutor.id).to.be.a(\"number\");",
+							"        pm.expect(jsonAutor.id).to.be.above(0);",
+							"        pm.variables.set(\"idAutorDoLivro\", jsonAutor.id);",
+							"      resolve();",
+							"    });",
+							"});",
+							"",
+							"Promise.all([promiseCategoria, promiseAutor]);"
 						]
 					}
 				},
@@ -2741,7 +2784,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nome\": \"São Paulo\",\n    \"paisId\": 1\n}",
+							"raw": "{\n    \"nome\": \"São Paulo\",\n    \"paisId\": {{idPaisParaEstado}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2788,7 +2831,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"paisId\": 1\n}",
+							"raw": "{\n    \"paisId\": {{idPaisParaEstado}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2835,7 +2878,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nome\": \"\",\n    \"paisId\": 1\n}",
+							"raw": "{\n    \"nome\": \"\",\n    \"paisId\": {{idPaisParaEstado}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2903,7 +2946,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nome\": \"Estado que já existe\",\n    \"paisId\": 1\n}",
+							"raw": "{\n    \"nome\": \"Estado que já existe\",\n    \"paisId\": {{idPaisParaEstado}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3041,7 +3084,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nome\": \"Bahia\",\n    \"paisId\": 123456789\n}",
+							"raw": "{\n    \"nome\": \"Bahia\",\n    \"paisId\": 9007199254740991\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3062,6 +3105,1315 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "43d59b86-3993-40f7-b15a-b03d34f2788b",
+						"type": "text/javascript",
+						"exec": [
+							"const promisePais = new Promise((resolve, reject) => {",
+							"    pm.sendRequest({",
+							"        url: 'http://localhost:8080/api/admin/paises',",
+							"        method: 'POST',",
+							"        header: 'Content-type: application/json',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({ nome: pm.variables.replaceIn('{{$randomCountry}}{{$randomInt}}') })",
+							"        }",
+							"    }, function (err, res) {",
+							"        if (err) {",
+							"            reject();",
+							"        }",
+							"        pm.expect(res.code).to.eq(200);",
+							"        const json = res.json();",
+							"        pm.expect(json.id).to.be.a(\"number\");",
+							"        pm.expect(json.id).to.be.above(0);",
+							"        pm.variables.set(\"idPaisParaEstado\", json.id);",
+							"        resolve();",
+							"    });",
+							"});",
+							"",
+							"Promise.all([promisePais]);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f6611d6-8425-47d3-b32b-d6ee732756b5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "checkout",
+			"item": [
+				{
+					"name": "Checkout [sucesso]: com cpf, complemento, país e estado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "69e8eca7-b0c9-4399-a1c2-e7b964e2a904",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"cnpj\": null,\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [sucesso]: com cnpj ao invés de cpf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bbdb840f-8e95-4f0e-8486-4f62d04e2c75",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": null,\n    \"cnpj\": \"93.925.731/0001-29\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [sucesso]: sem estado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1effed81-b12c-43ee-b8c3-a782e9b5ffc2",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"cnpj\": null,\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPaisSemEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [sucesso]: sem complemento",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5197011b-b4bb-448b-9962-a5a3320e7b8a",
+								"exec": [
+									"tests[\"status 200 retornado\"] = responseCode.code === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"cnpj\": null,\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem cpf e sem cnpj",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "97fcacc5-483a-45f0-b4f4-b70ff80b9229",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém mensagem de erro de cpf/cnpj\"] = responseBody.has(\"preencha o CPF ou CNPJ, mas não ambos ao mesmo tempo\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: com cpf e cnpj vazios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2343993d-ea04-4179-9d17-9405067e4e14",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cpf\"] = responseBody.has(\"cpf\");",
+									"tests[\"contém mensagem de erro de cpf\"] = responseBody.has(\"número do registro de contribuinte individual brasileiro (CPF) inválido\");",
+									"",
+									"tests[\"contém erro de cnpj\"] = responseBody.has(\"cnpj\");",
+									"tests[\"contém mensagem de erro de cnpj\"] = responseBody.has(\"número do registro de contribuinte corporativo brasileiro (CNPJ) inválido\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"\",\n    \"cnpj\": \"\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: cpf inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4dbd681-d542-492c-b63b-f8b642ca3c61",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cpf\"] = responseBody.has(\"cpf\");",
+									"tests[\"contém mensagem de erro de cpf\"] = responseBody.has(\"(CPF) inválido\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-99\",\n    \"cnpj\": null,\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: cnpj inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d1a8fb1-6b8f-490d-95d9-9badcdeb9be8",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cnpj\"] = responseBody.has(\"cnpj\");",
+									"tests[\"contém mensagem de erro de cnpj\"] = responseBody.has(\"(CNPJ) inválido\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": null,\n    \"cnpj\": \"93.925.731/0001-99\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: cnpj e cpf preenchidos ao mesmo tempo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1e7ef43-8ece-473a-a34c-cff1b556e374",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de CPF\"] = responseBody.has(\"CPF\");",
+									"tests[\"contém erro de CNPJ\"] = responseBody.has(\"CNPJ\");",
+									"tests[\"contém mensagem de erro de cpf/cnpj\"] = responseBody.has(\"preencha o CPF ou CNPJ, mas não ambos ao mesmo tempo\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"cnpj\": \"93.925.731/0001-29\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3bb07e3-09ea-463d-bbf9-9f031f1cb628",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: email vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aae4c181-6735-45aa-9cd2-07ee9fb13b35",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: email inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4facf8ab-bad2-4193-bdf9-d894293e2ce0",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de email\"] = responseBody.has(\"email\");",
+									"tests[\"contém mensagem de erro de email\"] = responseBody.has(\"deve ser um endereço de e-mail bem formado\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"invalido.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem nome",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7f20b41-9aba-4b9d-b71b-72ff560e7400",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: nome vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56fdaca2-ad49-40a2-86cb-311f1c504967",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de nome\"] = responseBody.has(\"nome\");",
+									"tests[\"contém mensagem de erro de nome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem sobrenome",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7404d61-9241-4e10-b0df-62dacdd17bb9",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de sobrenome\"] = responseBody.has(\"sobrenome\");",
+									"tests[\"contém mensagem de erro de sobrenome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sobrenome vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "45da604b-8f8c-4e73-8b9d-e6c307b9c4c8",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de sobrenome\"] = responseBody.has(\"sobrenome\");",
+									"tests[\"contém mensagem de erro de sobrenome\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem endereco",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e4f4f56-d8ba-4f33-b800-c898ffa45884",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de endereco\"] = responseBody.has(\"endereco\");",
+									"tests[\"contém mensagem de erro de endereco\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: endereco vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc15d7d3-7484-4d27-be28-3e763ef4540c",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de endereco\"] = responseBody.has(\"endereco\");",
+									"tests[\"contém mensagem de erro de endereco\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem cidade",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f829e75a-60a1-4778-b804-68eb09f9a6c5",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cidade\"] = responseBody.has(\"cidade\");",
+									"tests[\"contém mensagem de erro de cidade\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: cidade vazia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b6cba3a3-4c9e-48ba-a312-430b7899bacb",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cidade\"] = responseBody.has(\"cidade\");",
+									"tests[\"contém mensagem de erro de cidade\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem país",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "03e47f70-ca02-4ab0-86cc-06f71d68f36f",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de paisId\"] = responseBody.has(\"paisId\");",
+									"tests[\"contém mensagem de erro de paisId\"] = responseBody.has(\"deve ser maior que 0\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"cep\": \"04101-300\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem cep",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f18229d-630d-460f-a8c8-e95e5b7845e5",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cep\"] = responseBody.has(\"cep\");",
+									"tests[\"contém mensagem de erro de cep\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: cep vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c3d1d840-b3ce-4320-8ae2-42834dfad93b",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de cep\"] = responseBody.has(\"cep\");",
+									"tests[\"contém mensagem de erro de cep\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"\",\n    \"telefone\": \"(11) 5571-2751\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: sem telefone",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c964f22b-5c34-4171-9285-8baa0c70a0cc",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de telefone\"] = responseBody.has(\"telefone\");",
+									"tests[\"contém mensagem de erro de telefone\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout [erro]: telefone vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b654c5dc-918b-4919-9fdb-47e865386720",
+								"exec": [
+									"tests[\"status 400 retornado\"] = responseCode.code === 400;",
+									"",
+									"tests[\"contém erro de telefone\"] = responseBody.has(\"telefone\");",
+									"tests[\"contém mensagem de erro de telefone\"] = responseBody.has(\"não deve estar em branco\");",
+									"",
+									"tests[\"não contém stack trace\"] = !responseBody.has(\"org.springframework\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alexandre@gmail.com\",\n    \"nome\": \"Alexandre\",\n    \"sobrenome\": \"Aquiles\",\n    \"cpf\": \"854.449.210-06\",\n    \"endereco\": \"Rua Vergueiro, 3185 - Vila Mariana\",\n    \"complemento\": \"Conj 87\",\n    \"cidade\": \"São Paulo\",\n    \"paisId\": {{idPais}},\n    \"estadoId\": {{idEstado}},\n    \"cep\": \"04101-300\",\n    \"telefone\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "328dd256-0ed3-4dc9-8ab4-ae2bdd4119a4",
+						"type": "text/javascript",
+						"exec": [
+							"const _dummy = setInterval(() => {}, 10000);",
+							"",
+							"function promisePaisSemEstado () {",
+							"    return new Promise((resolve, reject) => {",
+							"        pm.sendRequest({",
+							"            url: 'http://localhost:8080/api/admin/paises',",
+							"            method: 'POST',",
+							"            header: 'Content-type: application/json',",
+							"            body: {",
+							"                mode: 'raw',",
+							"                raw: JSON.stringify({ nome: pm.variables.replaceIn('{{$randomCountry}}{{$randomInt}}') })",
+							"            }",
+							"        }, function (err, res) {",
+							"            if (err) {",
+							"                reject();",
+							"            }",
+							"            pm.expect(res.code).to.eq(200);",
+							"            const json = res.json();",
+							"            pm.expect(json.id).to.be.a(\"number\");",
+							"            pm.expect(json.id).to.be.above(0);",
+							"            pm.variables.set(\"idPaisSemEstado\", json.id);",
+							"            resolve();",
+							"        });",
+							"    });",
+							"}",
+							"",
+							"function promisePaisComEstado () {",
+							"    return new Promise((resolve, reject) => {",
+							"        pm.sendRequest({",
+							"            url: 'http://localhost:8080/api/admin/paises',",
+							"            method: 'POST',",
+							"            header: 'Content-type: application/json',",
+							"            body: {",
+							"                mode: 'raw',",
+							"                raw: JSON.stringify({ nome: pm.variables.replaceIn('{{$randomCountry}}{{$randomInt}}') })",
+							"            }",
+							"        }, function (err, res) {",
+							"            if (err) {",
+							"                reject();",
+							"            }",
+							"            pm.expect(res.code).to.eq(200);",
+							"            const json = res.json();",
+							"            pm.expect(json.id).to.be.a(\"number\");",
+							"            pm.expect(json.id).to.be.above(0);",
+							"            pm.variables.set(\"idPais\", json.id);",
+							"            resolve();",
+							"        });",
+							"    });",
+							"}",
+							"",
+							"function cadastraEstado() { ",
+							"    return new Promise((resolve, reject) => {",
+							"        pm.sendRequest({",
+							"            url: 'http://localhost:8080/api/admin/estados',",
+							"            method: 'POST',",
+							"            header: 'Content-type: application/json',",
+							"            body: {",
+							"                mode: 'raw',",
+							"                raw: JSON.stringify({ nome: pm.variables.replaceIn('{{$randomLastName}}{{$randomInt}}'), paisId:  pm.variables.get(\"idPais\") })",
+							"            }",
+							"        }, function (err, res) {",
+							"            if (err) {",
+							"                reject();",
+							"            }",
+							"            pm.expect(res.code).to.eq(200);",
+							"            const json = res.json();",
+							"            pm.expect(json.id).to.be.a(\"number\");",
+							"            pm.expect(json.id).to.be.above(0);",
+							"            pm.variables.set(\"idEstado\", json.id);",
+							"            resolve();",
+							"        });",
+							"    });",
+							"}",
+							"",
+							"(async function main() {",
+							"    promisePaisSemEstado();",
+							"    await promisePaisComEstado();",
+							"    cadastraEstado();",
+							"    clearInterval(_dummy)",
+							"})();"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "41a502e9-5934-4c0a-ae9e-c7a5dcde5b77",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
