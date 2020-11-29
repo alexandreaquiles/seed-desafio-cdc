@@ -18,6 +18,10 @@ public class AdminEstadoController {
 
     private EntityManager entityManager;
 
+    public AdminEstadoController(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
     @Transactional
     @PostMapping
     public ResponseEntity<NovoEstadoResponse> novoEstado(@RequestBody @Valid NovoEstadoRequest novoEstadoRequest) {
