@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -17,7 +16,6 @@ import java.util.Optional;
 @RequestMapping("/admin/estados")
 public class AdminEstadoController {
 
-    @PersistenceContext
     private EntityManager entityManager;
 
     @Transactional

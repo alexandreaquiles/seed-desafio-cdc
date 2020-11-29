@@ -3,7 +3,6 @@ package br.com.alexandreaquiles.casadocodigo.infra.errors.validation;
 import org.springframework.util.Assert;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
@@ -12,8 +11,11 @@ public class UniquenessValidator implements ConstraintValidator<Unique, Object> 
     private Class<?> entity;
     private String field;
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
+
+    public UniquenessValidator(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     @Override
     public void initialize(Unique unique) {

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 import static java.lang.String.format;
@@ -18,8 +17,11 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @RequestMapping("/livros")
 public class LivroController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
+
+    public LivroController(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     @GetMapping
     public ListagemDeLivrosResponse lista() {

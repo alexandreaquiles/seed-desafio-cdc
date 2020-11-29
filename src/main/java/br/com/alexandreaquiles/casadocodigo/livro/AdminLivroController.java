@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -18,8 +17,11 @@ import java.util.Optional;
 @RequestMapping("/admin/livros")
 public class AdminLivroController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
+
+    public AdminLivroController(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     @Transactional
     @PostMapping

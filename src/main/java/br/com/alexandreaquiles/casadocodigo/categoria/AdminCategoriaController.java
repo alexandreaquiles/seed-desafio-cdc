@@ -8,15 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/admin/categorias")
 public class AdminCategoriaController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
+
+    public AdminCategoriaController(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     @Transactional
     @PostMapping
