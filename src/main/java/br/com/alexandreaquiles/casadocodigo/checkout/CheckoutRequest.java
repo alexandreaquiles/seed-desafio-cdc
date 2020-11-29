@@ -1,8 +1,8 @@
 package br.com.alexandreaquiles.casadocodigo.checkout;
 
 import br.com.alexandreaquiles.casadocodigo.estado.Estado;
-import br.com.alexandreaquiles.casadocodigo.infra.errors.validation.MustHaveCpfOrCnpj;
 import br.com.alexandreaquiles.casadocodigo.infra.errors.validation.InvalidRelationshipWithEntityException;
+import br.com.alexandreaquiles.casadocodigo.infra.errors.validation.MustHaveCpfOrCnpj;
 import br.com.alexandreaquiles.casadocodigo.pais.Pais;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.br.CNPJ;
